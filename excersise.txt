@@ -1,0 +1,66 @@
+def product():
+    print("Given two integer numbers, return their product only if the product is equal to or lower than 1000. Otherwise, return their sum.")
+    n=input("number is ")
+    m=input("number is ")
+    product=int(n)*int(m)
+    add=int(n)+int(m)
+    if product<=1000:
+        return product
+    else:
+        return add
+def printing_cu_pre_sum():
+    print("Enter a number")
+    a=input()
+    previous_number=0
+    print("Printing current and previous number sum in a range", a)
+    for current_number in range(int(a)):
+        add=current_number+previous_number
+        print("Current number",current_number,"Previous number",previous_number,"sum:",add)
+        previous_number=current_number
+def printing_even_str():
+    print("Printing even strings")
+    string=input()
+    print("Orginal String is ", string)
+    for i in range (len(string)):
+        length=int(len(string))
+        even=i%2
+        if even==0:
+            print(string[i])
+def remove_chars():
+    print ("Enter a character and number to remove")
+    str1=str(input())
+    rm_char_no=int(input())
+    if(rm_char_no<=len(str1)):
+        print(str1[rm_char_no:]) # s[num:]
+    else:
+        print("Enter a number less or equal to character lenght")
+def returning_TorF():
+    num_x=list(input("Number of elements array: ").strip().split())
+    print ("Given list: ", num_x)
+    ln_x=len(num_x)
+    if num_x[0]==num_x[ln_x-1]:
+        print("Result is true")
+    else:
+        print("Result is False")
+        
+    num_y=list(input("Number of elements array: ").strip().split())
+    print ("Given list: ", num_y)
+    ln_y=len(num_y)
+    if num_y[0]==num_y[ln_y-1]:
+        print("Result is true")
+    else:
+        print("Result is False")
+def getting_input_int_array():
+    num_x=int(input("Please enter the number of element: "))
+    lst = []
+    for i in range(num_x):
+        ele = int(input())
+        lst.append(ele)
+    print ("Given list: ", lst)
+if __name__ == '__main__':
+    print("The Result is", product())
+    printing_cu_pre_sum()
+    printing_even_str()
+	remove_chars()
+	returning_TorF()
+	getting_input_int_array()
