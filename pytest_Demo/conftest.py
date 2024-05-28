@@ -11,3 +11,9 @@ def test_preRequisite():
     print("I'm generalized for all test (conftest) I'll execute first")
     yield
     print("I'm generalized for all test (conftest) I'll execute at last")
+
+
+@pytest.fixture()
+def dataLoad():
+    print("User profile data being created")
+    return ["Subbaram", "Theerthagiri", "subbaramt99@gmail.com"]
