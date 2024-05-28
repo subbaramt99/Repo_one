@@ -12,7 +12,7 @@ if ItemInCart != 2:
 # try, catch
 
 try:
-    with open("test.txt", 'r') as reader:
+    with open("../test.txt", 'r') as reader:
         reader.read()
         print("test file read successfully")
 except:

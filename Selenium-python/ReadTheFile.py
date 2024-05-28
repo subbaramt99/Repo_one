@@ -1,4 +1,4 @@
-file = open("test.txt")
+file = open("../test.txt")
 # file.read()  # Read all the content of file
 # print(file.read())  # Read and print all the content of file
 # print(file.read(10))  # Read and print only 10 indices of the content of file

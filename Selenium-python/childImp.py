@@ -1,4 +1,4 @@
-from OOPS import Calculator
+from Python.OOPS import Calculator
 
 
 class ChildImp(Calculator):
