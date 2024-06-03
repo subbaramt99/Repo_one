@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    tools{
+        maven 'mymaven'
+    }
+    stages{
+        stage("checkout"){
+            steps{
+                git url:'https://github.com/akshu20791/DevOpsClassCodes'
+            }
+        }
+	    stage("akshat compilee"){
+            steps{
+                bat "mvn compile"
+            }
+        }
+        stage("akshat testing"){
+            steps{
+                bat "mvn test"
+            }
+        }
+        stage("akshat qa"){
+            steps{
+                bat "mvn pmd:pmd"
+            }
+        }
+        stage("akshat package"){
+            steps{
+                bat "mvn package"
+            }
+        }
+    }
+}
