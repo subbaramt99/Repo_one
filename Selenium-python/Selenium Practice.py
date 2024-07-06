@@ -29,7 +29,9 @@ driver.implicitly_wait(5000)
 # Static dropdown
 # Practise url = https://rahulshettyacademy.com/AutomationPractice/
 static_dropdown = Select(driver.find_element(By.ID, "dropdown-class-example"))
+print(static_dropdown)
 static_dropdown.select_by_index(2)
+
 driver.implicitly_wait(5000)
 static_dropdown.select_by_value("option3")
 driver.implicitly_wait(5000)
