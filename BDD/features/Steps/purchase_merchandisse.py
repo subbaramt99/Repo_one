@@ -115,3 +115,4 @@ def checkout_complete(context):
     complete_order = context.driver.find_element(By.XPATH, "//div/h2[@class = 'complete-header']").text
     print(complete_order)
     assert "Thank you for your order!" == complete_order
+

@@ -73,5 +73,14 @@ print(str1.split(" "))  # split() function separates the given string by the def
 list1 = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
 #print(obj.Repeat(list1))
 
-OOPS = Person('SUBBARAM')
-OOPS.say_hello()
+#OOPS = Person('SUBBARAM')
+#OOPS.say_hello()
+
+class person:
+    def __int__(self, name):
+        self.name = name
+    def say_hello (self):
+        print("Hello {}!".format(self.name))
+
+subbu = person('subbaram')
+subbu.say_hello()
