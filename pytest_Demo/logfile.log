@@ -1,0 +1,7 @@
+Something is in warning mode
+A major error happened
+Critical issue
+2024-08-06 21:08:48,814: INFO: pytest_Demo.test_logging: Information statement
+2024-08-06 21:08:48,814: WARNING: pytest_Demo.test_logging: Something is in warning mode
+2024-08-06 21:08:48,814: ERROR: pytest_Demo.test_logging: A major error happened
+2024-08-06 21:08:48,814: CRITICAL: pytest_Demo.test_logging: Critical issue
