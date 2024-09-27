@@ -1,0 +1,14 @@
+vault
+
+ansible-vault create vault.yml
+
+
+vi vault.yml
+
+ansible-vault edit vault.yml
+
+ansible-vault rekey vault.yml
+
+ansible-vault encrypt xyz.yml
+
+ansible-vaule decrypt xyz.yml

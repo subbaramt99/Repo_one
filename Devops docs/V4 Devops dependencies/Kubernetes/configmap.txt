@@ -1,0 +1,44 @@
+
+vi sample.conf
+this is sample file
+
+kubectl create configmap mymap --from-file=sample.conf
+
+
+vi configmap.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myvolconfig
+spec:
+  containers:
+    - name: c1
+      image: centos
+      command: ["/bin/bash", "-c", "while true; do echo akshat; sleep 100; done"]
+      volumeMounts:
+        - name: testconfigmap
+          mountPath: "/tmp/config"
+  volumes:  
+    - name: testconfigmap
+      configMap:
+        name: mymap
+        items:
+          - key: sample.conf
+            path: sample.conf
+
+
+
+kubectl apply -f configmap.yml
+
+kubectl exec myvolconfig -it -- /bin/bash
+
+cd /tmp
+
+ls
+
+cd config
+
+ls
+
+cat sample.conf

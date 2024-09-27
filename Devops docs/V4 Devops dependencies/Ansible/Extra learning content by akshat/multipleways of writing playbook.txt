@@ -1,0 +1,23 @@
+--- #Target and task playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+    pkgname: httpd
+    pkgname1: docker
+  tasks:
+   - name: Instal on linux
+     action: yum name='{{pkgname}}' state=absent
+   - name: Install dockerr for akshat
+     action: yum name='{{pkgname1}}' state=present
+   - name: create directory in nodes
+     action: file path=/home/ansible/master state=absent
+   - name: install git
+     yum:
+        name: git
+        state: present
+   - name: create a second directory
+     file:
+        path: /home/ansible/seconddir
+        state: directory 

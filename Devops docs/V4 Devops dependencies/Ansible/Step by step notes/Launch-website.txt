@@ -1,0 +1,20 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install apache server in nodes
+      action: yum name=httpd state=present
+    - name: install docker server in nodes
+      action: yum name=docker state=present
+    - name: start the docker
+      action: service name=docker state=started
+    - name: start the apache server
+      action: service name=httpd state=started
+    - name: copy file from  master to node
+      action: copy src=akshatfile dest=/home/ansible
+    - name: copy the file6 from master to node
+      action: copy src=file6.txt dest=/home/ansible
+    - name: copy index.html file to the default location of apacheserver
+      action: copy src=index.html dest=/var/www/html/

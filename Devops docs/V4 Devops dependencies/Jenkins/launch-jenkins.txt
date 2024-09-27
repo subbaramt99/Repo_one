@@ -1,0 +1,52 @@
+########NOTES FOR JENKINS LAUNCH#######################
+
+1) Go to aws account
+> search ec2
+> instances > launch instances
+> in ami select windows 2019 > t2.micro > next >next> next > in security group add rule (http and custom tcp > 8080 (source is anywhere) ) > review and launch the machine (also create a key pair)
+
+> launch the machine via rdp access (select machine>click on connect -> rdp client -> click on password and with the help of keypair generate password)
+>launch machine
+
+2) Go to servermanager -> local server -> on the right side you will see IE enhanced security -> disable it 
+
+3) Open internet explorer -> google.com -> search git download -> download and install git for windows
+ https://gitforwindows.org/
+
+4) google.com -> jdk 11 download -> download for windows exe -> take you to an oracle page ->if you dont have account register -> automatically download will start
+
+Another method: https://drive.google.com/file/d/1wI0QX0I29_ZCO3BPOASjwNdzMChZ8J39/view?usp=sharing -> paste it the internet explorer -> the jdk 11 will download 
+
+> now go to C drive -> program files -> java -> jdk 11.0.14-> C:\Program Files\Java\jdk-11.0.14
+
+>go to startup menu -> search for environment variables -> go to user variables -> Click on new -> Variable name : JAVA_HOME and varibale value: C:\Program Files\Java\jdk-11.0.14
+(do the same step for system varibles) 
+
+>Go back to jdk 11 folder in c drive -> click on bin folder -> open it and copy the path
+after that go to system variables(in environment variables) -> path (double click on the path )-> NEW -> paste the path (C:\Program Files\Java\jdk-11.0.14\bin)
+
+>go to startup menu -> search cmd -> echo %JAVA_HOME% 
+if the result is C:\Program Files\Java\jdk-11.0.14 it means our java enviroment variables is set properly) 
+
+5)go to google.com ->search maven -> download the binary zip archive  (https://maven.apache.org/download.cgi)
+after maven is downloaded -> the folder will open in front of you -> cut the folder and paste it in the C drive (C:\apache-maven-3.8.5)
+>go to startup menu -> search for environment variables -> go to user variables -> Click on new -> Variable name : M2_HOME and varibale value: paste the apache maven link in c drive C:\apache-maven-3.8.5\
+
+(do the same step for system varibles) 
+
+>>Go back to maven folder in c drive -> click on bin folder -> open it and copy the path 
+after that go to system variables(in environment variables) -> path (double click on the path )-> NEW -> paste the path (C:\apache-maven-3.8.5\bin)
+
+> go to startup menu -> search cmd -> mvn -version 
+(this will give you the version of maven and also java ) (if there is some error coming in the java path then close your cmd and start again)
+
+echo %M2_HOME%
+o/p -> maven c drive link 
+
+6) go to google.com -> search jenkins -> jenkins.io -> download -> select LTS (long term support) -> download jenkins for windows 
+
+install jenkins -> next -> Run service as local system -> test port (8080) -> next -> next -> next -> install the jenkins
+
+open  https://localhost:8080/
+
+you will see jenkins live

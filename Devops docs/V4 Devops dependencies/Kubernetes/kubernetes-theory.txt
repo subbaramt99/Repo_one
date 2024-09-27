@@ -1,0 +1,33 @@
+Kubernetes notes
+
+1) kubernetes is an open source container management tool which automates container deployment , container scaling and load balancing
+
+2) It schedules , runs and manages isolated containers which are running on virtual server/physical server or cloud machines.
+
+3) All top cloud providers supports k8s
+
+###########Cloud based k8s services available (competitors)########
+1) GKE -> google kubernetes services
+2) AKS -> azure kubernetes services
+3) EKS -> elastic kubernetes services
+
+############Features of k8s#########
+-> orchestration services ( clustering / Managing of any number of containers running in different network)
+
+-> Autoscaling 
+
+-> Autohealing
+
+-> load balancer 
+
+-> Platform Independent 
+
+-> fault tolerance
+
+->Roll back
+
+-> health monitoring of containers
+
+->  Batch execution
+
+-> K8s supports json and yaml

@@ -1,0 +1,14 @@
+--- #Target and task playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+    pkgname: httpd
+    pkgname1: docker
+  tasks:
+   - name: Instal on linux
+     action: yum name='{{pkgname}}' state=absent
+   - name: Install dockerr for akshat
+     action: yum name='{{pkgname1}}' state=present
+~                                                 

@@ -1,0 +1,109 @@
+Lab for Ansible
+
+1)	Create 3 Ec2 machine name them as : Ansibleserver
+Node1 and node2
+
+
+2)	Go to software Mobaxterm and there login into all the three machines
+3)	In Ansible machine :
+	sudo su
+	yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+	yum update -y
+	yum install git python python-level python-pip openssl ansible -y
+	ansible --version
+	vi /etc/ansible/hosts
+
+press i 
+In #Example1.....
+[demo] <<private ip of the machines>>
+
+press esc :wq
+
+  	vi /etc/ansible/ansible.cfg
+press i
+
+Remove # from inventory
+Remove # from sudo su
+
+esc and :wq
+
+4) do this step in all the nodes and ansible machine
+	adduser ansible
+	passwd ansible
+(now set the password)
+	visudo
+press i
+scroll down and find  #All root to run any command ....
+
+now there add 
+ansible ALL=(ALL) NOPASSWD: ALL    (Add this below root)
+
+5) Do this step in ansible server:
+	su - ansible 
+	sudo yum install httpd -y
+	
+6) Do this step in ansible and node servers
+
+	vi /etc/ssh/sshd_config
+press i
+in authentication,
+uncomment Permit root login yes
+(remove #)
+scroll down and uncomment password authentication yes(by removing #)
+and comment password authentication no
+(by putting #)
+
+7) do this for nodes and ansible server
+	service sshd restart
+
+8)In ansible server: 
+	su - ansible
+	ssh <<private ip of node1>>
+	touch fileinnode1 file1innode1
+	exit
+Now go to node 1
+	ls
+check if fileinnode1 and file1innode1 is there 
+Again come back to ansible server
+	ssh <<private ip of node2>>
+	touch fileinnode2 file1innode2
+	exit
+Now go to node 2
+	ls
+check if fileinnode2 and file1innode2 is there 
+
+###########################REMOVE PASSWORD AUTHENTICATION USING TRUST RELATIONSHIP#########################
+
+9) Go to ansible server
+	ssh-keygen
+	ls -a
+	cd .ssh/
+	ls
+	ssh-copy-id ansible@<<private ip of node1>>
+password : last time it will ask for pass
+	ssh-copy-id ansible@<<private ip of node1>>
+password : last time it will ask for pass
+	cd ..
+	ssh <<private ip of node1>>
+	exit
+	ssh <<private ip of node 2>>
+	exit
+	
+
+##########################################HOST PATTERN###########################################
+
+10) Do this in ansible machine	
+	ansible all --list-hosts
+	ansible demo --list -hosts
+
+################################################ADHOC COMMANDS ########################################
+
+11) Go to ansible server
+	ansible demo -a "ls"
+	ansible all -a "touch fileinallnodes"
+	ansible demo -a "sudo yum install httpd -y"
+
+
+
+
+

@@ -1,0 +1,76 @@
+###########RUN THIS IN BOTH MASTER AND NODES############
+1) sudo su
+2) apt-get update
+3) apt-get install apt-transport-https
+
+
+4) apt install docker.io -y
+5) docker --version
+6) systemctl start docker
+7) systemctl enable docker
+
+8) sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+
+9) nano /etc/apt/sources.list.d/kubernetes.list
+####PASTE THIS IN NANO KUBERNETES FILE OPENED#######
+ deb http://apt.kubernetes.io/ kubernetes-xenial main
+############################################################
+
+Press ctrl + X and then press Y and press enter after that
+
+10) apt-get update
+
+11) apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+
+12) cd mkdir /etc/docker
+
+13) cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+
+press enter
+
+14) sudo systemctl enable docker
+
+15) sudo systemctl daemon-reload
+
+16) sudo systemctl restart docker
+
+17) sudo kubeadm reset
+
+
+#####BOOTSTRAPPING THE MASTER NODE (IN MASTER)#########
+
+kubeadm init        (Run only in master)
+ 
+####COPY THE COMMAND (kubeadm join) TO RUN IN NODES & SAVE IN NOTEPAD#####
+
+mkdir -p $HOME/.kube    (Run only in master)
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config   (Run only in master)
+
+
+chown $(id -u):$(id -g) $HOME/.kube/config (Run only in master)
+
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml   (run only in master)
+
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml (run only in master)
+
+###############CONFIGURE WORKER NODES (IN NODES)##################################
+
+COPY LONG CODE PROVIDED MY MASTER IN NODE NOW LIKE CODE GIVEN BELOW  ...Dont forget to remove / before discovery below
+
+kubeadm join <<<172.31.6.97:6443>> --token cuvmdu.helts4k3an33agq6 --discovery-token-ca-cert-hash sha256:0b85dae4e6271c6ab60d55497bff12129aeca31390199b75381868e123892a8d
+
+(run only  in nodes) 
+
+##############GO TO MASTER AND RUN THIS COMMAND################
+kubectl get nodes

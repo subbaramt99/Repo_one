@@ -1,0 +1,37 @@
+git init -> initialize an existing directory as a Git repository
+
+git config --global user.name "akshat"   (set a name that is identifiable for credit when review version history)
+
+git config --global user.email "akshu20791@gmail.com"   (set an email address that will be associated with each history marker)
+ 
+git add .  (add all files as it looks now to your next commit (stage))
+
+git add [file] (add a file as it looks now to your next commit (stage))
+
+git commit -m " first commit"
+
+git remote add origin <<central git url>>
+
+git push -u origin master    (use username and personal authentication key )
+
+
+git diff - tell you the difference between your last commited files and the changes you made in the file 
+
+git status -> tell you the status of the files
+
+git branch -> list your branches. a * will appear next to the currently active branch
+
+git branch [branch-name]
+
+git stash -> Save modified and staged changes
+
+git clone [url] -> retrieve an entire repository from a hosted location via URL 
+
+
+
+
+
+
+
+
+

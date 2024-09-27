@@ -1,0 +1,35 @@
+Variables :
+
+
+
+pipeline {
+    environment {
+        FNAME = "akshat"
+        LNAME= "gupta"
+    }
+    agent any
+    stages {
+        stage('calling variables'){
+            steps{
+                sh "echo Hello ${FNAME} ${LNAME} "
+            }
+        }
+        stage('Making change in fname variable locally') {
+            environment {
+               FNAME = "akshat_local" 
+            }
+            steps {
+                sh "echo Hello ${FNAME} ${LNAME}"
+            }
+        }
+        stage('Making change in lname variable locally') {
+            environment {
+               LNAME = "skill_local" 
+            }
+            steps {
+                sh "echo Hello ${FNAME} ${LNAME}"
+            }
+        }
+    }
+}
+

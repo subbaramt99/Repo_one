@@ -1,0 +1,16 @@
+-- #my playbook for handlers and lauch website 
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install httpd server on centos
+      action: yum name=httpd state=installed
+      notify: restart httpd
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+           src: /home/ansible/index.html      #create index.html in ansible server
+           dest: /var/www/html/
+  handlers:
+    - name: restart httpd
+      action: service name=httpd state=restarted
