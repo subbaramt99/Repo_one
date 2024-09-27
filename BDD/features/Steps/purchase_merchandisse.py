@@ -1,19 +1,25 @@
+import time
+
 from behave import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
+
 @given('I am on the Demo Login Page')
 def Demo_Login(context):
     context.driver = webdriver.Edge()
     context.driver.get("https://www.saucedemo.com/")
+    time.sleep(2)
     print("Url launched successfully")
 
 @when('I fill the account information for account StandardUser into the Username field and the Password field')
-def filling_userCredentials(context, username, password):
+def filling_userCredentials(context):
     #context.driver.get("https://www.saucedemo.com/")
     context.driver.find_element(By.XPATH, "//input[@id = 'user-name']").send_keys("standard_user")
+
     context.driver.find_element(By.XPATH, "//input[@id = 'password']").send_keys("secret_sauce")
+    time.sleep(4)
     print("user credentials entered successfully")
 
 @when('I click the Login Button')
@@ -36,12 +42,14 @@ def step_impl(context):
 def LockedOutUser(context):
     context.driver.find_element(By.XPATH, "//input[@id = 'user-name']").send_keys("locked_out_user")
     context.driver.find_element(By.XPATH, "//input[@id = 'password']").send_keys("secret_sauce")
+    time.sleep(3)
     #context.driver.find_element(By.XPATH, "//input[@id = 'login-button']").click()
     #print("user logged in successfully")
 
-@then('I verify the Error Message contains the text "Sorry, this user has been banned. "')
+@then('I verify the Error Message contains the text "Sorry, this user has been banned')
 def Verifying_Error(context):
-    ErMsg = context.driver.find_element(By.XPATH, "//button[@class = 'error-button']").text
+    ErMsg = context.driver.find_element(By.XPATH, "//h3").text
+    print(ErMsg)
     assert "Sorry, this user has been locked out." in ErMsg
     #raise NotImplementedError(u'STEP: Then I verify the Error Message contains the text "Sorry, this user has been banned. "')
 
@@ -74,8 +82,9 @@ def added_LowPrice_product(context):
 
 @when('user clicks on cart')
 def add_to_cart(context):
-    context.driver.find_elements(By.XPATH, "//button[@class = 'btn btn_primary btn_small btn_inventory ']").click()
+    context.driver.find_element(By.XPATH, "//button[@class = 'btn btn_primary btn_small btn_inventory ']").click()
     print("user added minimum value product")
+    time.sleep(2)
 
 @when('user clicks on checkout')
 def goto_cart(context):
@@ -98,10 +107,12 @@ def step_impl(context):
 @when('user clicks Continue button')
 def step_impl(context):
     context.driver.find_element(By.XPATH, "//input[@type = 'submit']").click()
+    time.sleep(2)
 
 @then('I verify in Checkout overview page if the total amount for the added item is $8.63')
 def verfy_totlAmt(context):
     total = context.driver.find_element(By.XPATH, "//div[@class = 'summary_total_label']").text
+    time.sleep(2)
     print(total)
     assert "8.63" in total
     print("Total price is verified the added item is $8.63")

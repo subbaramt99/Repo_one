@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service
@@ -31,9 +33,11 @@ driver.implicitly_wait(5000)
 static_dropdown = Select(driver.find_element(By.ID, "dropdown-class-example"))
 print(static_dropdown)
 static_dropdown.select_by_index(2)
+time.sleep(3)
 
 driver.implicitly_wait(5000)
 static_dropdown.select_by_value("option3")
+time.sleep(3)
 driver.implicitly_wait(5000)
 
 # Practise url = https://rahulshettyacademy.com/dropdownsPractise/

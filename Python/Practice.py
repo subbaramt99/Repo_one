@@ -123,13 +123,41 @@ def fibonacci_num():
         print(n1)
     else:
         print("Please enter valid nth number")
+def Pattern():
+    n = int(input("Enter a number:"))
+    num = 1
+    num1 = 65   # ASCI value of A
+    for i in range (1, n+1):
+        for j in range(1, i+1):
+            ch = chr(num1)     # Typecasting int to chr
+            #print("*", end="")   # Printing * pattern
+            #print(i, end="")    # Printing row number               # end="" is printing same line
+            #print(j, end="")     # Printing number from 1 to n in pattern
+            #print(num, end="")   # Printing series of number in pattern
+            print(ch, end="")     # Printing alphabet in pattern
+        num = num + 1
+        num1 = num1 +1
+        print("\r")
 
+def Pramyid():
+    n = int(input("Enter a number:"))
+    space = n -1
+    for i in range(0, n):
+        for j in range(0, space):
+            print(end=" ")
+        space = space -1
+        for k in range (0, i + 1):
+            print("* ", end = "")
+        print("\r")
 
-
-
-
-
-
+def Reverse():
+    string = input("Enter a string:")
+    #print(len(string))
+    Reversed = ""
+    for i in string:
+        Reversed = i + Reversed   # taking string value one by one adding in prefix
+        print(Reversed)
+    print(Reversed)
 
 
 #Area_of_circle()
@@ -141,3 +169,6 @@ def fibonacci_num():
 #Anagram()
 #Factorial()
 #fibonacci_num()
+#Pattern()
+#Pramyid()
+Reverse()

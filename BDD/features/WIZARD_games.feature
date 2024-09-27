@@ -1,3 +1,5 @@
+# To run the scenario open terminal cd C:\SUBBARAM T\Applications\Python\Exercise Files\Samurai working copy\BDD\features> behave <step file name>
+# eg: behave WIZARD_games.feature
 Feature: purchase merchandise
 
     Scenario: 1 Successful Login
@@ -10,7 +12,7 @@ Feature: purchase merchandise
         Given I am on the Demo Login Page
         When I fill the account information for account LockedOutUser into the Username field and the Password field
         And I click the Login Button
-        Then I verify the Error Message contains the text "Sorry, this user has been banned. "
+        Then I verify the Error Message contains the text "Sorry, this user has been banned
     Scenario: 3 Order a product
         Given I am on the inventory page
         When user sorts products from low price to high price

@@ -17,24 +17,25 @@ driver.find_element(By.XPATH, "//input[@id = 'login-button']").click()
 Logo = driver.find_element(By.XPATH, "//div[@class = 'app_logo']").is_displayed()
 assert Logo == True
 print(Logo)
-#print(driver.title)
-#print(driver.current_url)
-#driver.implicitly_wait(5000)
+print(driver.title)
+print(driver.current_url)
+driver.implicitly_wait(5000)
 
 
-#driver.get("https://www.saucedemo.com/")
-#driver.implicitly_wait(5000)
-#driver.find_element(By.XPATH, "//input[@id = 'user-name']").send_keys("locked_out_user")
-#driver.find_element(By.XPATH, "//input[@id = 'password']").send_keys("secret_sauce")
-#driver.find_element(By.XPATH, "//input[@id = 'login-button']").click()
-#print("user logged in successfully")
-#driver.implicitly_wait(5000)
+driver.get("https://www.saucedemo.com/")
+driver.implicitly_wait(5000)
+driver.find_element(By.XPATH, "//input[@id = 'user-name']").send_keys("locked_out_user")
+driver.find_element(By.XPATH, "//input[@id = 'password']").send_keys("secret_sauce")
+driver.find_element(By.XPATH, "//input[@id = 'login-button']").click()
+print("user logged in successfully")
+driver.implicitly_wait(5000)
 #ErMsg = driver.find_element(By.XPATH, "//button[@class = 'error-button']").text
-#print(ErMsg)
-#assert "Sorry, this user has been locked out." in ErMsg
-#driver.implicitly_wait(5000)
+ErMsg = driver.find_element(By.XPATH, "//h3").text
+print(ErMsg)
+assert "Sorry, this user has been locked out." in ErMsg
+driver.implicitly_wait(5000)
 
-
+'''
 static_dropdown = Select(driver.find_element(By.XPATH, "//select[@class = 'product_sort_container']"))
 static_dropdown.select_by_index(2)
 time.sleep(2)
@@ -73,3 +74,4 @@ complete_order = driver.find_element(By.XPATH, "//div/h2[@class = 'complete-head
 print(complete_order)
 assert "Thank you for your order!" == complete_order
 time.sleep(2)
+'''
