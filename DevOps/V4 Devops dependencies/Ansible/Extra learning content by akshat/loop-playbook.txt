@@ -1,0 +1,11 @@
+--- # loop concept
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install list of packages
+      yum:
+       name: ['httpd', 'wget', 'vim']
+~                                                                                                                                                 
+~                            

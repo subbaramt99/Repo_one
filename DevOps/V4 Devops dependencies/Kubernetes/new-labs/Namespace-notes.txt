@@ -1,0 +1,234 @@
+Namespace notes
+
+vi devns.yml
+==============================NAMESPACES===================================
+apiVersion: v1
+kind: Namespace
+metadata:
+   name: dev
+   labels:
+     name: dev
+
+kubectl apply -f devns.yml
+kubectl get namespace
+
+=================================to create a pod=================
+vi pod.yml
+
+
+kind: Pod                              
+apiVersion: v1                     
+metadata:                           
+  name: testpod                  
+spec:                                    
+  containers:                      
+    - name: c00                     
+      image: ubuntu              
+      command: ["/bin/bash", "-c", "while true; do echo Akshat Gupta; sleep 5 ; done"]
+  restartPolicy: Never 
+
+kubectl apply -f pod1.yml -n dev
+kubectl get pods
+kubectl get pods -n dev
+kubectl delete -f pod1.yml
+(o/p : error)
+kubectl delete -f pod1.yml -n dev
+kubectl apply -f pod1.yml -n dev
+kubectl get pods
+(o/p : no resource found)
+kubectl config set-context $(kubectl config current-context) --namespace=dev   
+kubectl get pods
+kubectl config view | grep namespace:
+
+
+==============================================================================================
+Request and limits lab 
+
+==============================================================================================
+
+vi podresources.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resources
+spec:
+  containers:
+  - name: resource
+    image: centos
+    command: ["/bin/bash", "-c", "while true; do echo akshat; sleep 5 ; done"]
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "100m"
+      limits:
+        memory: "128Mi"
+        cpu: "200m"
+
+
+
+
+
+kubectl apply -f podresources.yml
+kubectl get pods
+kubectl describe pod resources    (you can see memory and cpu utilization)
+kubectl delete -f podresources.yml
+
+============RESOURCEQUOTA========================================
+
+vi resourcequota.yml
+
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+   name: myquota
+spec:
+  hard:
+    limits.cpu: "400m"
+    limits.memory: "400Mi"
+    requests.cpu: "200m"
+    requests.memory: "200Mi"
+
+kubectl apply -f resourcequota.yml
+
+
+=================================================================
+vi testpod.yml
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: deployments
+spec:
+  replicas: 3
+  selector:      
+    matchLabels:
+     objtype: deployment
+  template:
+    metadata:
+      name: testpod8
+      labels:
+        objtype: deployment
+    spec:
+     containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo akshat; sleep 5 ; done"]
+         resources:
+            requests:
+              cpu: "200m"
+
+
+kubectl apply -f testpod.yml
+kubectl get deploy
+(here you wll 0/3 is ready which means some error is there)
+
+kubectl get rs
+
+
+<<<you will see the pods are not starting up because in resourcequouta we have defined the max limit as 400m and requested as 200m 
+but when 3 replicas we created in testpod.yml it requires 600m (3x200m) . thats the reason the pods did not start
+
+kubectl get rs
+
+(copy the deployment...)
+
+kubectl describe rs <<deployment....which was copied above) 
+
+
+kubectl delete -f resourcequota.yml
+kubectl delete -f testpod.yml
+
+
+
+=======================IF i set cpu limit in limitrange and a pod is created w/o any limit or request==============================================================
+vi cpudefault.yml
+
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-limit-range
+spec:
+  limits:
+  - default:
+      cpu: 1
+    defaultRequest:
+      cpu: 0.5
+    type: Container
+
+
+
+kubectl apply -f cpudefault.yml
+
+
+####
+vi pod11.yml
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod1
+  annotations:
+   description: Our first testing pod
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Test Message; sleep 5 ; done"]
+  restartPolicy: Never         # Defaults to Always
+
+
+kubectl apply -f pod11.yml
+kubectl get pods
+kubectl describe pod testpod1
+
+o/p you will the limit and request in the pod...
+
+kubectl delete -f pod11.yml
+
+==============Now lets do the lab in which we will define the limit but request we will not define=========================================================================
+vi cpu2.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-cpu-demo-2
+spec:
+  containers:
+  - name: default-cpu-demo-2-ctr
+    image: nginx
+    resources:
+      limits:
+        cpu: "1"
+
+
+kubectl apply -f cpu2.yml
+kubectl get pods
+kubectl describe pod
+
+o/p you will see that limit becomes equal to the request 
+
+======================================================request is defined but not limit===========================================
+vi newpod1.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-cpu-demo-3
+spec:
+  containers:
+  - name: default-cpu-demo-3-ctr
+    image: nginx
+    resources:
+      requests:
+        cpu: "0.75"
+
+
+kubectl apply -f newpod1.yml
+kubectl describe pod
+
+in o/p you will limit as 1 and cpu as 0.75 
+why: If the limits field is not specified, the container can consume as much CPU resources as it needs, 
+up to the capacity of the node where it is running. However, if other containers are running on the same
+ node and competing for CPU resources, the container without limits could potentially consume all the available
+ CPU resources and cause performance issues for other containers.

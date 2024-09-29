@@ -1,0 +1,130 @@
+launch aws linux
+1) sudo su
+
+2) sudo yum install docker -y
+
+3) service docker start
+
+4) docker images   #show all the images in docker registry
+
+5) docker pull python
+
+6) docker images
+
+7) docker pull python:alpine
+
+8) docker images
+
+9) docker run -it --name c01 ubuntu /bin/bash   #it will create a container with the name c01 and ubuuntu as base images
+
+10) ls
+
+11) exit   #to come out of the container u can write exiut
+
+12) docker run -it --name c02 ubuntu /bin/bash
+
+13) exit
+
+14) docker ps -a
+
+15) docker run -it --name c03 ubuntu /bin/bash
+
+16) touch file1 file2 file3   #create blank files named file1 file2 file3
+
+17) exit
+  
+18) docker start c03
+ #start the container
+19) docker attach c03    #to get inside the running container
+
+################### Dockers - create a replica of the comntainer ##################
+
+20) docker run -it --name c05 ubuntu /bin/bash
+
+21) touch file1 file2 fileakshat
+
+22) apt update -y
+
+23) apt install git -y
+
+24) exit
+
+25) docker commit c05 akshatimage
+
+26) docker images
+
+27) docker run -it --name c06 akshatimage /bin/bash
+
+28) ls
+
+29) which git 
+
+exit
+
+###########################to exit the container without stopping##################################
+
+
+30) docker start c06
+
+31) docker attach c06
+
+32) press ctrl p and ctrl q  (to save the prorocess and quit)
+
+33) docker ps 
+
+###########################port expose###############################
+
+34) docker run -it --name webapp1 -p 8086:80 ubuntu /bin/bash
+
+35) apt update -y
+36) apt install apache2 -y
+37) service apache2 start
+38) cd /var/www/html
+39) cat >index.html  (press enter)
+hello akshat
+(press ctrl d to come out)
+
+
+40) go to security group of the machine -> edit inbound rules -> add 8086 port 
+
+41) open <<ip address of machine>>:8086 to access the website 
+
+
+############################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

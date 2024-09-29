@@ -1,0 +1,47 @@
+1) cat >file1 
+to exit ctrl + D
+
+2) cat file1   #see the content of the file
+
+3) cat >> file1
+hello world       #append the hello world in existing file1
+
+4) touch file2   #create a empty file
+
+5) touch file3 file4 file5   #create multiple files for me
+
+6) vi file6   #file editor where press i and esc :wq to save and exit
+
+7) cp file1 file6  # copy file1 in file6
+
+8) mv file1 dir1   #move file1 in dir1
+
+9) cd  # change directory 
+
+10 ) cd .. #go back to previous directory
+
+11) ls  #listing of all the files
+
+12) clear #will clear the screen
+
+13) mkdir dir1 #create a dir1 (it is like a folder in windows)
+
+14) touch .file   #create hidden file
+
+15) ls -a   #list all the files inclusing the hidden files
+
+16) rm -rf <<directory or file name>> #delete the file or directory forcefully
+
+17) rmdir <<directory name>> #remove the empty directory
+
+17.1) sudo su (give the sudo user rights )
+
+18) yum install <<software>>   (yum install httpd ) (install the software in linux)
+
+19) yum remove <<software>> #delete the software in linux
+
+20) yum update <<software>> #update the software in linux
+
+21) which <<software>>   #location of the software
+
+22) wget <<link of the software>>   (download the software )

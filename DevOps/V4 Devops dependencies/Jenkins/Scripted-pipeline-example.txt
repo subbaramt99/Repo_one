@@ -1,0 +1,39 @@
+pipeline{
+    agent any
+    tools{
+        maven 'mymaveney'
+    }
+    stages{
+        stage("Checkout"){
+            steps{
+                echo "starting the checkout"
+                git url: 'https://github.com/akshu20791/DevOpsClassCodes'
+                echo "checkout the code done"
+            }
+        }
+        stage("akshat-code-compile"){
+            steps{
+                echo "here code would be converted from user readable launguage to machine readable launguage"
+                bat "mvn compile"
+            }
+        }
+        stage("testing of the code"){
+            steps{
+                echo "here the testing of the project will happen from the testcases"
+                bat "mvn test"
+            }
+        }
+        stage("qa via pmd"){
+            steps{
+                echo "here the code review would be done via pmd"
+                bat "mvn pmd:pmd"
+            }
+        }
+        stage("package"){
+            steps{
+                echo "here the code would be converted to the package or executable file"
+                bat "mvn package"
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+cat> foo1.conf
+akshat
+hello
+(press ctrl D to exit)
+
+pwd
+
+vi playbook1.yml
+
+
+
+
+--- #Target and Task playbook
+- hosts: demo
+  user: akshat
+  become: yes
+  connection: ssh
+  vars:
+      pkgname: httpd
+      akshat: docker
+  tasks:
+      - name: Install httpd on linux
+        action: yum name='{{pkgname}}' state=absent
+      - name: install docker on linux
+        action: yum name='{{akshat}}' state=absent
+      - name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
+        ansible.builtin.user:
+                          name: johny
+      - name: Creates directory
+        file:
+             path: /home/akshat/dir1
+             state: directory
+      - name: Copy file with owner and permissions
+        ansible.builtin.copy:
+              src: /home/akshat/foo1.conf     #/home/akshat come after pwd command was used 
+              dest: /home/akshat/foo1.conf
+      - name: Remove a line from the file
+        lineinfile:
+              path: /home/akshat/foo1.conf
+              state: absent
+              regexp: '^akshat'
+
+
+
+
+
+press esc and :wq
+
+ansible-playbook playbook1.yml
+
+

@@ -1,0 +1,13 @@
+--- #My loops playbook
+- hosts: demo
+  user: akshat
+  become: yes
+  connection: ssh
+  tasks:
+     - name: add list of users in my nodes
+       user: name='{{item}}' state=present
+       with_items:
+              - akshat
+              - john
+              - rahul
+              - learn

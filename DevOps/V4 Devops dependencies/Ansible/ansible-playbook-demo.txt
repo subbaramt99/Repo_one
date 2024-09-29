@@ -1,0 +1,26 @@
+--- #Target and task playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+     - name: Install docker on linux
+       action: yum name=docker state=installed
+
+
+
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install apache server in node
+      action: yum name=httpd state=present
+    - name: install docker in node
+      action: yum name=docker state=present
+    - name: start the docker
+      action: service name=docker state=started
+    - name: start the apache
+      action: service name=httpd state=started
+    - name: copy the file from master to node
+      action: copy src=subbaramfile dest=/home/ansible

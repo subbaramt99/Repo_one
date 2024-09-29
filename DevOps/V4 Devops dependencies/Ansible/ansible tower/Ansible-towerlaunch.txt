@@ -1,0 +1,18 @@
+Launch redhat ec2 
+AMi - MUMBAI: RHEL-8.6.0_HVM-20220503-x86_64-2-Hourly2-GP2
+machine type: m5d.large
+
+Comamnds to launch it :
+
+1)sudo yum -y update
+2) dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+3) sudo dnf repolist epel
+4) sudo yum -y install ansible vim curl
+5) mkdir /tmp/tower && /tmp/tower
+6) curl -k -O https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
+7) ls
+8) tar xvf ansible-tower-setup-latest.tar.gz
+9) cd ansible-tower-setup*/
+10) vim inventory
+11) sudo ./setup.sh
+
