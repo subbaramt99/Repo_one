@@ -2062,8 +2062,8 @@ headers = {
 proxies = {'https': 'http://cloudproxy.nat.bt.com:8080'}
 
 
-#respose = requests.request("POST", url_modA, data=payload_str_ModA, headers=headers, verify= False)
-respose = requests.request("POST", url_modC, data=payload_str_ModC, headers=headers, verify= False)
+respose = requests.request("POST", url_modA, data=payload_str_ModA, headers=headers, verify= False)
+#respose = requests.request("POST", url_modC, data=payload_str_ModC, headers=headers, verify= False)
 print(respose.text)
 
 
