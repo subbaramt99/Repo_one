@@ -18,23 +18,34 @@ describe('My First Test', () => {
       // selecting by index, "eq" is function to select by index
       cy.get('.products').find('.product').eq(1).contains('ADD TO CART').click()
         // selecting the element by travers the list of element by "each" function 
+      
+//************************Looping and traverse from one by one element**************************** */
       cy.get('.products').find('.product').each(($el, index, $list) => {
-        const vegName= $el.find('h4.product-name').text()
-        if(vegName.includes("Cashews"))
+      const vegName= $el.find('h4.product-name').text()
+      cy.log(vegName)
+      if(vegName.includes("Cashews - 1 Kg"))
             {
                 //$el.contains('ADD TO CART').click()
                 //$el.find('.product-action > button').click() --> on find method click operation is not passed
                 cy.wrap($el).find('.product-action > button').click()
-                
             }
-        else
+      else
         {
-            cy.log("Product is not found")
+            cy.log("Product is not found") // Print the log in cypress console
         }
-    
+        
     })
 
+    // Trying to print text of logo button
+        //const logo = cy.get('.brand').text() --> it will not work as the cypress behaviour unable to assign to a variable
+      
+      cy.get('.brand').then(function(logo)
+      {
+        cy.log(logo.text()) // As text is not cypress commend, but it supports as is JQuerry (Cy always suppoert jQuery)
+      })
+
+      cy.url.should('includes', 'anyTEXT in url') // --> it'll get the Url of the open window
 
     }) 
     //it('My second test case', function(){})
-  } )
+  })

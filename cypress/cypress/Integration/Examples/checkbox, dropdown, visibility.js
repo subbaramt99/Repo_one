@@ -21,6 +21,7 @@ describe('My dropdowns test', function() {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         // for dropdowns cypress have select mehtod to select static dropdown
         cy.get('select').select('option2').should('have.value', 'option2')
+        cy.get('select').select(1).should('have.value', 'option1')
 //**************Dynamic dropdown********************** */
         cy.get('#autocomplete').type('ind')
         cy.get('.ui-menu-item').each(($ele, index, $list) => {
@@ -53,3 +54,23 @@ describe('My visiblity test', function(){
     
 })
 
+//**************Hovers********************** */
+
+describe('My Mousehover test', function(){
+    it('test with Mousehover', function() {
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+        cy.get('#mousehover').click({ force: true }).get("a[href='#top']").click() // making the element force hover
+        cy.get('#mousehover').invoke('show').should('be.visible')
+        //cy.get("a[href='#top']").should('be.visible')
+
+        cy.get('#mousehover').trigger('mouseover').get("a[href='#top']").should('be.visible').click()
+        cy.wait(5000)
+        cy.get('#mousehover').invoke('show').get("a[href='#top']").click()
+        //cy.get("a[href='#top']").should('be.visible')
+
+        //cy.get('#show-textbox').click() // making the element visible
+        cy.get("a[href='#top']").should('not.be.visible')
+        cy.hover('#mousehover').should('be.visible')
+
+    })
+})
