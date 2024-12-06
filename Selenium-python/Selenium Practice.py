@@ -3,8 +3,9 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
-
+from selenium.webdriver.support.wait import WebDriverWait
 # service = Service(executable_path="C:\edgedriver_win64\msedgedriver.exe")
 # options = webdriver.EdgeOptions()
 # driver = webdriver.Edge(service=service, options=options)
@@ -34,6 +35,9 @@ static_dropdown = Select(driver.find_element(By.ID, "dropdown-class-example"))
 print(static_dropdown)
 static_dropdown.select_by_index(2)
 time.sleep(3)
+
+wait = WebDriverWait(driver, 10)
+wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, ".promoInfo")))
 
 driver.implicitly_wait(5000)
 static_dropdown.select_by_value("option3")

@@ -1,0 +1,33 @@
+Polymorphism:
+-------------
+  Executing methods in more than one form
+
+poly -- many
+morphism -- forms
+
+Types:
+-----
+1,Method overloading
+2,method overriding
+
+1, Method overloading:   (Complie time polymorphism/static binding/static polymorphism)
+
+------------------------
+ -> Same class
+ -> Same method name
+ -> different arguments
+
+arguments depends on datatype
+arguments depends on datatype order
+arguments depends on datatype number or count
+
+
+
+----------------------------------------
+Method overriding : ( Runtime polymorphism/dynamic binding/dynamic polymorphism)
+-------------------
+
+--> same method name
+--> same arguments 
+--> different class
+

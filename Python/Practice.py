@@ -70,6 +70,26 @@ def palindrome():
     else:
         print("Given number is not a palindrome")
 
+# Write a program to check if the given string is palindrome or not
+def is_palindrome():
+    s = str(input("Enter a string "))
+    l = len(s)
+    flag = False
+    print("length of string is ", l)
+    for i in range(0, int(len(s)/2)):
+        print(s[i])
+        print(s[len(s)-i-1])
+        if s[i] != s[len(s)-1]:
+            flag = False
+            break
+        flag = True
+    
+    if flag:
+        print("Given string is a palindrome")
+    else:
+        print("Given string is not a palindrome")
+    
+
 # Write a program to check if the given number is Armstrong or not.
 def Armstrong():
     num = int(input("Enter a number: "))
@@ -129,12 +149,12 @@ def Pattern():
     num1 = 65   # ASCI value of A
     for i in range (1, n+1):
         for j in range(1, i+1):
-            ch = chr(num1)     # Typecasting int to chr
+            #ch = chr(num1)     # Typecasting int to chr
             #print("*", end="")   # Printing * pattern
-            #print(i, end="")    # Printing row number               # end="" is printing same line
+            print(i, end="")    # Printing row number               # end="" is printing same line
             #print(j, end="")     # Printing number from 1 to n in pattern
             #print(num, end="")   # Printing series of number in pattern
-            print(ch, end="")     # Printing alphabet in pattern
+            #print(ch, end="")     # Printing alphabet in pattern
         num = num + 1
         num1 = num1 +1
         print("\r")
@@ -165,10 +185,11 @@ def Reverse():
 #Pov_or_Nev()
 #prime()
 #palindrome()
+is_palindrome()
 #Armstrong()
 #Anagram()
 #Factorial()
 #fibonacci_num()
 #Pattern()
 #Pramyid()
-Reverse()
+#Reverse()

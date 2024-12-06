@@ -9,24 +9,24 @@ values.append("end")
 print(values)  # [1, 2, ram, nivi, 3, 4, end]
 values[2] = "RAM"
 print(values)
-del values[1]
+del values[1] # [1, 'RAM', 'nivi', 3, 4, 'end']
 print(values)
 
 
 # Tuple - same as LIST data type but it is immutable.
 # TypeError: 'tuple' object does not support item assignment
 val = (2, 3, "ram", 4)
-print(val[1])
+print(val[1]) # 3
 # val[2] = "RAM"
-print(val)
+print(val) # (2, 3, 'ram', 4)
 
 # Dictionary - in java it is call it as a Ash mapping
 # print value having key = 1
 dictionary = {1:"subbarm", 2:"ram", 3:"surya", "a":5, "c":"hello"}
-print(dictionary)
-print(dictionary[1])
-print(dictionary["a"])
-print(dictionary["c"])
+print(dictionary) # {1: 'subbarm', 2: 'ram', 3: 'surya', 'a': 5, 'c': 'hello'}
+print(dictionary[1]) # subbarm
+print(dictionary["a"]) # 5
+print(dictionary["c"]) # hello
 
 dic = {}
 dic["1st name"] = "subbaram"

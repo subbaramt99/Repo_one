@@ -1,0 +1,60 @@
+Data Types and Return Types:
+-----------------------------
+=> complier:
+          A program that converts instructions into a machine code form so that they can be read and executed by a computer.
+
+DataType     Size     Defaultvalue    Wrapperclass
+
+byte         1         0              Byte
+short        2         0              Short
+int          4	       0	      Integer
+long         8         0              Long
+
+float        4         0.0            Float
+double       8         0.00           Double
+char('A')    -         null           Character
+String("Apple")        null           String
+Boolean      -         false          Boolean
+
+Range calculating formula:
+-------------------------
+1 byte = 8 bits
+byte= -(2^n-1) to ((2^n-1)-1)
+    = -128 to 127
+
+Wrapper class:
+------------
+  Class of datatype is called wrapper class.
+
+1.Primitive Data Types:
+->Java has 8 primitive data types that are built-in, and they hold simple values. Each of these types has a specific size and range.
+
+Data Type	
+byte	   
+short	
+int	
+long	
+float	
+double
+char	
+Boolean
+
+2. Non-Primitive (Reference) Data Types
+->Non-primitive types are created by the programmer and include classes, interfaces, arrays, and enums. 
+->These types reference objects or instances, and they don't have fixed sizes.
+
+String: A sequence of characters. Example: String str = "Hello";
+Arrays: Used to store multiple values of the same type. Example: int[] arr = {1, 2, 3};
+Classes and Objects: Classes define the structure and behavior of objects. Example: Person person = new Person();
+Interfaces: Abstract types used to specify a behavior that classes must implement.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Return types :
+
+Void:
+-----
+1, No return value
+
+
+
+	

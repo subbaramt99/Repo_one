@@ -1,0 +1,7 @@
+package Inheritance;
+
+public class employee {
+	int salary = 430000;
+}
+
+

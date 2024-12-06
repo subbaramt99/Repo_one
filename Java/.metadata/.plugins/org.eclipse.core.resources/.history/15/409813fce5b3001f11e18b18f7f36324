@@ -1,0 +1,7 @@
+package Hierarchical_Inheritance;
+
+public class physics {
+
+	int mark = 430000;
+	
+}

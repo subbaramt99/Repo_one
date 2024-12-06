@@ -1,0 +1,9 @@
+package Inheritance;
+
+public class employee {
+	int salary = 430000;
+	public void employe() {
+		System.out.println("Employe");
+	}
+
+}

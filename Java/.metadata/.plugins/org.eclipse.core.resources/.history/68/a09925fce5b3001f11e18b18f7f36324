@@ -1,0 +1,12 @@
+package Hierarchical_Inheritance;
+
+public class student extends physics, maths, social {
+	
+	public static void main(){
+		student S = new student();
+		System.out.println("Student of Physics is:" +S.physics);
+		System.out.println("Salary of Maths is:" +S.maths);
+		System.out.println("Salary of Soical is:" +S.social);
+	}
+
+}
