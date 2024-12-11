@@ -1,0 +1,28 @@
+Abstraction:
+-----------
+  hiding the implementation logic or details
+
+Types of Abstraction:
+--------------------
+-> partial abstraction
+->fully abstraction
+
+Partial abstraction: (abstract class)
+-------------------
+-> Contain both abstract and non abstract method
+->contain keywords extends
+-> use a keyword abstract in both class and abstract method -
+->we can't create object
+-> Don't have any default access specifier
+
+fully abstraction:  (Interface)
+------------------ 
+->contain only abstract methods ---
+->contain keywords implements --
+->use a keyword interface instead of class ---
+->we can't create a object ---
+->default access specifier is public abstract--
+
+
+
+

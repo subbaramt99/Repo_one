@@ -1,0 +1,14 @@
+package Polymorphism;
+
+public class XYZ {
+	
+	public static void main(String[] args) {
+		Parent a; // Creating a object for parent class
+		
+		a = new SubClass1();
+		a.subclass();
+		a = new SubClass2();
+		a.subclass();
+	}
+
+}

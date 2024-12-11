@@ -1,0 +1,19 @@
+package Polymorphism;
+//Java Program for Method overloading
+//By using Different Types of Arguments 
+
+
+public class Helper {
+	
+	// Method with 2 integer parameters
+	public static int multiply (int a, int b) {
+		return a*b;
+	}
+	
+	// With same name but with 2 double parameters
+	public static double multiply (double a, double b) {
+		return a*b;
+	}
+	
+
+}

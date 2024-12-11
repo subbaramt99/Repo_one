@@ -72,12 +72,16 @@ describe('My Web table test', function () {
             //cy.log( Courses)
             if (Courses === 'Master Selenium Automation in simple Python Language'){
                 cy.log(Courses)
+                cy.get('tr td:nth-child(2)').eq(index).next().then(function(price) {
+                    const Price = price.text()
+                    expect(Price).to.equal('25')
+                })
             }
             if (index === 3){
                 cy.log(Courses)
             }
             //cy.log(list)
-            cy.pause()
+            //cy.pause()
             
         })
     })
