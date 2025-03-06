@@ -1,7 +1,0 @@
-package Hierarchical_Inheritance;
-
-public class social {
-
-	int mark = 430000;
-	
-}

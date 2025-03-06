@@ -32,6 +32,18 @@ describe('My Child window test', function () {
         // Cypress not having capability to handle child windows
         // So we have option to manupulate the Html dome with "invoke" method
         // using it i'm removing the "target = "_blank" attribute so the new tab link will launch in same tab
+        /*
+        //cy.get('#opentab').prop('href') // Prop is Jquery method to get property of the element and it will not work as it not cypress commend 
+        cy.get('#opentab').then(function (ele) {
+            const url = ele.prop('href') 
+            cy.visit(url)
+            cy.log(url)
+            cy.origin(url, ()=>{  
+                cy.get("div[class = 'button float-left'] a[class = 'main-btn']").click()
+            })
+
+        });
+        */
         cy.get('.btn-style.class1.class2').invoke('removeAttr', 'target').click()
         // Cross domain working with cypress
         //cy.get("div[class = 'button float-left'] a[class = 'main-btn']").should('be.visible')
@@ -39,6 +51,8 @@ describe('My Child window test', function () {
             cy.get("div[class = 'button float-left'] a[class = 'main-btn']").click()
 
         })
+
+
 
     })
 

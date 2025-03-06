@@ -38,7 +38,7 @@ class AngularPractice:
             product.find_element(By.XPATH, "div/button[@class = 'btn btn-info']").click()
             # Chain xpath should not be like usual XPATH "//" missing here
     #time.sleep(3)
-            #driver.get_screenshot_as_file("checkoutScrn12.png")
+            driver.get_screenshot_as_file("checkoutScrn12.png", "C:\\Downloads")
     driver.find_element(By.XPATH, CheckoutBtn1).click()
     driver.execute_script("window.scroll(0,0)")
     #time.sleep(2)

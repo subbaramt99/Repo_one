@@ -1,16 +1,12 @@
+import { number } from "assert-plus"
+
 describe('template spec', () => {
   it('passes', () => {
     cy.visit('https://example.cypress.io')
   })
-})
-
-describe('My First Test', () => {
   it('Does not do much!', () => {
     expect(true).to.equal(true)
   })
-})
-
-describe('My First Test Suit', function(){
   it('My first testcase', function(){
     cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/');  //cy is like driver in selenium
     cy.get('input.search-keyword').type('ca')
@@ -55,5 +51,59 @@ describe('My First Test Suit', function(){
     //cy.url.should('includes', 'anyTEXT in url') // --> it'll get the Url of the open window
 
   }) 
-  //it('My second test case', function(){})
+
+  it('My test with calender', ()=>{
+
+    const month = "6";
+    const date = "15";
+    const year = "2027";
+    const expectedlist = [month,date,year]
+    cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/offers')
+    cy.get('.react-date-picker__inputGroup').click()
+    cy.get('.react-calendar__navigation__label').click()
+    cy.get('.react-calendar__navigation__label').click()
+
+    cy.contains('button', year).click()
+
+
+    //it get all the elements and type casting the month as string from number and click
+    cy.get("button[class='react-calendar__tile react-calendar__year-view__months__month']").eq(Number(month)-1).click()
+   
+    // it will get the path and check the 'abbr' attribute has value of 'date'
+    cy.get("button[class='react-calendar__tile react-calendar__month-view__days__day']").contains('abbr', date).click()
+    
+    
+    //Assertion
+
+    //Taking the date elements iterate to each ele and invoking the value attr and asserting it with expected date 
+    cy.get("input[inputmode='numeric']").each(($el, index) =>{
+      const dt = cy.wrap($el).invoke('val').should('eq', expectedlist[index])
+      //cy.log(dt)
+    })
+
+  })
+
+  it.only('My E2E test', ()=>{
+
+    const ProductName = 'Nokia Edge'
+    cy.visit('https://rahulshettyacademy.com/loginpagePractise/#')
+    cy.get('#username').type('rahulshettyacademy')
+    cy.get('#password').type('learning')
+    cy.get('#terms').click()
+    cy.get('#signInBtn').click()
+    cy.contains("Shop Name").should('be.visible')
+
+    cy.get("app-card[class = 'col-lg-3 col-md-6 mb-3']").should('have.length', 4)
+
+    cy.get("app-card[class = 'col-lg-3 col-md-6 mb-3']").filter(`:contains("${ProductName}")`)
+      .then($el => {
+        cy.wrap($el).should('have.length', 1)
+        cy.wrap($el).contains('button', 'Add ').click()
+      })
+
+    cy.get("app-card[class = 'col-lg-3 col-md-6 mb-3']").eq(0).contains('button', 'Add ').click()
+    cy.contains('a', "Checkout").click()
+
+    }) 
+    
 })

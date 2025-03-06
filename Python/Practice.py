@@ -78,8 +78,10 @@ def is_palindrome():
     print("length of string is ", l)
     for i in range(0, int(len(s)/2)):
         print(s[i])
+        r = s[len(s)-i-1]
         print(s[len(s)-i-1])
-        if s[i] != s[len(s)-1]:
+        print(r)
+        if s[i] != s[len(s)-1-i]:
             flag = False
             break
         flag = True
@@ -171,7 +173,7 @@ def Pramyid():
         print("\r")
 
 def Reverse():
-    string = input("Enter a string:")
+    string = input("Enter a string:")  # samurai
     #print(len(string))
     Reversed = ""
     for i in string:

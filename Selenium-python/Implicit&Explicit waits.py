@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-driver = webdriver.Edge()
+driver = webdriver.Chrome()
 driver.implicitly_wait(4)  # 4sec is max time out...if the object find in 2 sec (3 sec is saved)
 
 

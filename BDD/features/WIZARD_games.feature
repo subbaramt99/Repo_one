@@ -1,5 +1,5 @@
 # To run the scenario open terminal cd C:\SUBBARAM T\Applications\Python\Exercise Files\Samurai working copy\BDD\features> behave <step file name>
-# eg: behave WIZARD_games.feature
+# eg: behave WIZARD_games.feature gherkins keyword
 Feature: purchase merchandise
 
     Scenario: 1 Successful Login

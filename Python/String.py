@@ -2,6 +2,7 @@ str = "samurai@gmail.com"
 str1 = "@7"
 str2 = "subbaram"
 str3 = "         great  i      "
+print(ord('a'))
 print(str[1])
 print(str[0:7])  # It is sub string in python
 print((str + str1))  # Concatenate

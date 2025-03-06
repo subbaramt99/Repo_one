@@ -1,7 +1,0 @@
-package Hierarchical_Inheritance;
-
-public class maths {
-
-	int mark = 430000;
-	
-}

@@ -1,0 +1,12 @@
+package Polymorphism;
+
+public class SubClass2 {
+	
+	public static void main(String[] args) {
+        // Calling method by passing
+        // input as in arguments
+        System.out.println(Helper2.multiply(2, 4));
+        System.out.println(Helper2.multiply(2, 7, 3));
+	}
+
+}
