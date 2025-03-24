@@ -1,0 +1,88 @@
+Python Feature
+
+1. Simple and easy to learn
+2. Open Source
+3. Dynamically typed
+4. Platform independent
+5. Scripting Language
+6. Scalable
+7. Portable and easy to maintain
+8. Database interface
+9. GUI programming --> Graphical user interface
+10. Extensive libraries
+11. Extensible
+
+Programming Environment
+1. IDE --> Integrated development Environment for python
+2. Installing of Anaconda Navigator (www.anaconda.com)
+3. Google colaboratory
+
+Topics of Python
+1. Introduction of python
+ Python is high level object oriented programming
+2. Why Python?
+    Easy syntax
+    readability
+    vast libraries .. ect
+3. use case
+    web development
+    data science
+    Automation
+    AI & ML....etc
+4. IDE --> Anaconda
+
+2. Variables and data types
+Variable:
+    It is a container to store data in memory
+    In py you don't need to declare the type of variable
+    py dynamically typed
+    variable name is case-sensitive
+Data types:
+    numeric --> int --> numbers
+    boolean --> bool --> True, False
+    Float --> float --> decimal
+    character constant --> char --> alphabets
+    String --> str
+        str = ''   # single line string
+        str1 = ""  # single line string
+        str2 = '''
+            multiline strings
+        '''
+    Array --> Collection of same data types it is index based
+    List --> Collection of different data type is index based
+
+
+3. Operators in Python
+    Arithmetic operators --> (+, -, *, /, //, %, **)
+    Comparison Operators --> (==, !=, <, >, <=, >=)
+    Logical Operators --> (and, or, not)
+    Assignment Operator  --> (=, +=, -=, *=)
+    Membership Operator --> (in, not in)
+    Identity Operator --> (is, is not)
+
+4. Control statement
+    Conditional Statement (if, else, elif)
+    loops
+        for loop
+        while loop
+        Loop control statement (break, continue, pass)
+            break --> The break Statement exit from loop premeturly
+            continue --> The continue Statement is skip the current iteration and continue with next
+            pass --> do nothing it is null operation
+    nested loop --> loop inside loop
+
+5. Data structures in python
+    list --> List is ordered mutable collection of data, and it contains item of different datatypes
+        syntax for list (empty list) --> list =[]
+        create simple list and mixed list
+        accessing the list using index --> list[1]
+        Modifying the list --> list[1] = 100
+        list methods --> append, insert, remove, pop, index, count, sort, reverse, clear
+        slicing list --> creating sub list --> [3:5], [:5], [::2], [::-1]
+        Iterating the list
+
+    tuple --> tuple is ordered immutable collection of data
+    set -->
+    dictionaries
+
+

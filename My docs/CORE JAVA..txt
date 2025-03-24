@@ -1,0 +1,128 @@
+1, CORE JAVA.
+2, Manual testing
+3,Automation testing Selenium
+4,Frameworks- real time scenario
+5,Project - Domain
+6, API
+
+Core Java:
+1. Intro - JAVA
+2.OOPs Concepts
+3.Inheritance
+4.Polymorphism
+5.Abstraction
+6.Class , Object, Method
+7.Encapsulation
+8.DataTypes
+9.Variables
+10.Control Statement
+11.Looping
+12.String
+13.Array & Collections
+14.Constructor
+15.Access Specifier
+16.Access Modifier
+17.Exception Handling 
+
+
+1, CORE JAVA:
+
+C , C++ :
+---------
+1, Platform dependent
+2, Run Single application at a time
+
+JAVA:
+-----
+
+Platform Independent
+Run multiple application at a time
+Simple programming languages
+Run as platorm Independent and OOPS based one  - Object oriented
+Easy to run and debug
+
+JAVA main features:
+-------------------
+
+1, Open sources
+2,Platform Independent
+3, Multi threading
+4,portable
+5,more secure
+
+
+JDK:
+----
+JAVA DEVELOPMENT KIT
+
+  Whenever we want to run or develop a program in java JDK is essential
+
+JDK - JRE+JVM
+
+JRE:
+JAVA RUNTIME ENVIRONMENT
+
+It contains predefined files and libraries.
+
+
+
+JVM:
+
+Java Virtual machine .
+It is used for memory allocation , object creation
+
+
+Tools:
+Eclipse 
+IntellJ
+Visual studio -
+
+Java Configuration setup:
+---------------------------
+1, JDK download 
+Install JDK
+verify JDK
+Download eclipse
+
+
+
+Pascal notation : Naming standards  /Inttcap notation
+-------------------------------
+  Each word of first letter should be capital
+e.g Welcome
+    FacebookTechnolgyLimited
+
+followed in : Projectname,class
+
+Camel Notation:
+--------------
+  First word of first letter small remaing each word of firstletter should capital.
+e.g facebookTechnologyLimited
+
+Follwed in: objectname,method name,varaible name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

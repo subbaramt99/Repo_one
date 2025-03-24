@@ -1,0 +1,154 @@
+Control statements:
+------------------
+
+  the statements which breaks the normal sequential flow of the program are called Control statements
+
+Decisionmaking - > if,if - else , switch
+
+looping -> for,while,do while
+
+braching -> break,continue
+
+If, If-else , Nested If, Swwitchcase, for , while , do - while
+
+Conditions:
+-----------
+== -> Compare                            
+> greater than
+< less than
+>= greater than or equal
+<= less than or equal
+!= Notequal
+
+If - else syntax:
+-----------------
+if(Condition){
+true
+}
+else{
+false
+}
+
+=====================================
+AND u=A+B  -
+---       
+First    second    Result 
+T	T	   T
+T	F	   F
+F       F          F
+F       T          F
+
+
+
+Logical AND: [&&]  - most used
+-----------------
+
+   It check the first condition if it is false , It directly execute the else block
+It doesn't check the 2nd one.
+
+Bitwise AND: [&]
+-----------
+   It check the both conditions and executing the block 
+
+
+OR:
+---
+F     S   Result
+T     T    T
+T     F    T
+F     T    T
+F     F    F
+
+logical OR: [||]
+-------------
+   It  check the first condition , if it is true , It directly execute the IF block,
+It doesn't check the 2nd one.
+
+Bitwise OR:
+-----------
+  It check the both conditions and then execute the block.
+
+Nested If:
+----------
+
+  If within the if called nested if
+if( condition){ -> outer if
+
+if(condition){  --> innerif
+}
+}
+-----------------------------------
+
+1,O-If -> pass -> InIf -> pass -> inner if logic
+2,O -IF ->pass ->InIf -> fail ->inner else logic
+3,O -IF -> fail -> Outer else logic
+
+--------------------------------
+If ladder:
+---------
+if(condition){
+}
+else if(condition){
+}
+else{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

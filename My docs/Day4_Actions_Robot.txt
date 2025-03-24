@@ -1,0 +1,51 @@
+Actions:   Class   ( .perform() - single action  , .build().perform() ->multipleactions
+--------   
+   using Actions class we can do mouse over action drag and drop , Right click , double click
+
+Syntax:
+-------
+Actions objectName= new Actions(WebDriver refname);
+
+To do mouse over action :
+
+moveToElement().perform();
+
+
+Different Methods for performing Keyboard Events:
+=================================================
+keyDown(modifier key): Performs a modifier key press.
+sendKeys(keys to send ): Sends keys to the active web element.
+keyUp(modifier key): Performs a modifier key release.
+
+
+Different Methods for performing Mouse Events:
+===============================================
+click(): Clicks at the current mouse location.
+doubleClick(): Performs a double-click at the current mouse location.
+contextClick() : Performs a context-click at middle of the given element.
+clickAndHold(): Clicks (without releasing) in the middle of the given element.
+dragAndDrop(source, target): Click-and-hold at the location of the source element, moves to the location of the target element
+moveToElement(toElement): Moves the mouse to the middle of the element
+release(): Releases the depressed left mouse button at the current mouse location
+
+-----------------------------------------------------------------------------------------------------------
+
+
+ROBOT: java.awt
+
+To perform the virtual keyboard actions 
+
+ROBOT : Class
+Robot objectName=new Robot();
+
+package: java.awt
+
+methods:
+--------
+KeyPress()- to press the key
+KeyRelease() - to release the key
+
+KeyEvent: Class
+
+VK_DOWN     VK- virtual key  -  static variable reference
+VK_UP

@@ -1,0 +1,33 @@
+Frame:
+-------
+Frames in selenium are used to handle web pages that contain <iframe> elements, 
+An iframe(inline frame) is an embedded document within a webpage.
+selenium provides a methods to switch between frames for interacting with elements inside them.
+
+tagname ---  <iframe id ="876"  name = "aaa/>
+             <frameset >
+              <frame id="123"   name="qwe"/>
+            
+
+methods:
+
+switchTo().frame();
+
+By index :  index start with zero
+
+By Name or ID : if the frame has a name or id attribute , we can switch to directly
+
+By WebElement : we can locate the frame as a webelement and then switch to it
+
+driver.switchTo().frame(String id);
+driver.switchTo().frame(String name);
+driver.switchTo().frame(WebElement element);
+
+driver.switchTo().frame(int index)
+
+Count of frames:
+---------------
+
+
+
+

@@ -7,13 +7,13 @@ from selenium.webdriver.edge.service import Service
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
-# service = Service(executable_path="C:\edgedriver_win64\msedgedriver.exe")
+service = Service(executable_path="C:\edgedriver_win64\msedgedriver.exe")
 # options = webdriver.EdgeOptions()
 # driver = webdriver.Edge(service=service, options=options)
 
-#driver = webdriver.Edge()
+driver = webdriver.Edge()
 
-driver = webdriver.Edge(executable_path = "C:\SUBBARAM T\Applications\selenium\chromedriver-win64\edgedriver_win64\msedgedriver.exe")
+#driver = webdriver.Edge(executable_path = "C:\SUBBARAM T\Applications\selenium\chromedriver-win64\edgedriver_win64\msedgedriver.exe")
 
 driver.get("https://rahulshettyacademy.com/")
 driver.find_element(By.XPATH, "(//li/a[text()='Practice'])[1]").click()

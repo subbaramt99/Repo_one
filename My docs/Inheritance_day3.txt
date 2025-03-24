@@ -1,0 +1,95 @@
+Inheritance:
+-----------
+
+ We can access one class property or method from another class using extends keyword
+
+1,memory wastage low
+2,resusable code purpose
+
+Types of Inheritance:
+--------------------
+1,Single 
+2,Multiple
+3,multilevel
+4,hybrid
+5,hierarchical
+
+Single Inheritance:
+------------------
+ combination of one parent and once child class
+
+multiple Inheritance:
+--------------------
+   more than one parent will access the child parallel at a time
+
+ParentClass1 -> Childclass  <- ParentClass2
+
+multilevel Inheritance:
+--------------------------
+  more than one parent will access the child in a tree like structure
+Childclass <- Parent <- Grand Parent
+
+Hierarchical Inheritance:
+-------------------------
+ combination of one parent and more than one child
+ ParentClass -> Child 1
+             -> child 2
+             ->Child 3
+Hybrid:
+-------
+It is combination of single and multiple inhertance
+Class A-> Class B
+|           |
+Class C ->Class D
+=================================================================
+
+multiple Inheritance:
+--------------------
+ Multiple inheritance wont working in java due to priority problem or Deadly diamond problem , it shows complile error
+
+ 	
+
+Hierarchical Inheritance:
+-------------------------
+ combination of one parent and more than one child
+
+SBI 3    HDFC 2  ICICI 1
+
+
+       RBI
+
+RBI   -> acc, CC
+
+ICICI  -> id extends RBI  ->  id,acc,cc
+HDFC    -> hd extends RBI  -> hd,acc,cc 
+SBI    -> sd extends RBI ->   sd,acc,cc
+
+RAM  -->  JVM  ---> heap memory object1= 2mb , object2=2mb , object3=2mb
+
+
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ print(now)
 
 ## Calculating the area of the circle ##
 
-def Area_of_circle():
+def Area_of_circle(r):
     print("Enter radius of the circle:")
     radius = float(input())
     area = (3.144 * radius * radius)
@@ -182,16 +182,16 @@ def Reverse():
     print(Reversed)
 
 
-#Area_of_circle()
+Area_of_circle()
 #Odd_or_Even()
 #Pov_or_Nev()
 #prime()
 #palindrome()
-is_palindrome()
+#is_palindrome()
 #Armstrong()
 #Anagram()
 #Factorial()
 #fibonacci_num()
 #Pattern()
 #Pramyid()
-#Reverse()
+Reverse()

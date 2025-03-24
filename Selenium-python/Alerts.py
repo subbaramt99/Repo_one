@@ -6,8 +6,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Edge()
-#driver = webdriver.Chrome()
+#driver = webdriver.Edge()
+driver = webdriver.Chrome()
 
 driver.get("https://the-internet.herokuapp.com/iframe")
 

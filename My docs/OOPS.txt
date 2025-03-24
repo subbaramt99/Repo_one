@@ -1,0 +1,37 @@
+OOPS:
+
+Object oriented Programming structure
+
+  1,It is method of implementation in which program is organized.
+  2,As collection of object, class and methods
+
+Object ----  Run time memory allocation
+method --- Set of actions to be performed
+class -- collection of object and method
+
+Polymorphism
+Abstraction
+Inheritance
+Encapsulation
+
+=================================================================
+
+Object Creation:
+---------------
+ClassName objectName = new ClassName();
+
+Method call:
+-----------
+objectName.methodName();
+
+Import package :
+
+import packageName.className;
+import packageName.*;
+
+Private - class level access
+public - global level access
+
+
+
+
