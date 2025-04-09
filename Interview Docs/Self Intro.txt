@@ -1,0 +1,50 @@
+Hi, I am susaritha. I have 4.5 years of experience in software testing, covering both manual and automation testing. 
+
+My technical expertise includes working with Java and Selenium for automation, along with building and maintaining frameworks using TestNG, Cucumber BDD, Maven, and data-driven framework approaches.
+
+I also have strong experience in API testing using tools like Postman for manual and Rest Assured for automation.
+
+In terms of tools, I’ve worked with JIRA for defect tracking and management, Jenkins for ci/cd tools, and Git for version control.
+
+I’ve been part of agile teams following two-week sprint cycles, and I actively participate in all agile ceremonies, including sprint planning, grooming, and reviews.
+
+Throughout my career, I’ve gained good domain knowledge in healthcare and Q-commerce. 
+
+=================================================
+Framework overview:
+
+Explain your Framework:
+In my previous project we used POM (PAGE OBJECT MODEL) BDD like (Cucumber bdd), TestNG kind of Frameworks for automating the testing.
+And also our framework supports data driven testing by using external data sources such as Excel files or databases. This will allow us to run the same set of tests with different data inputs and we will use this for our test data coverage and reusability.
+Ans also we will be integrate our testing with our CI/CD pipelines like Jenkins or GitLab and this will ensures that our tests are executed as part of the build process like providing immediate feedbacks on code changes and enhancing our deployment process 
+For reporting, we use extent Reports which will provide us comprehensive test reports and logs which help us track test results identify issues quickly and provide insights to test execution.
+The benefits of our framework are test maintainability, better collaboration through BDD.
+Overall our framework significantly streamlined our testing process and they are reducing the time required for test execution.
+
+
+Java – It uses Java programming language.
+
+TestNG – It uses TestNG as a testing framework. 
+
+Maven-based – It will be maven-based. So all the dependencies will be in a POM file and the test suite can be triggered using maven commands.
+
+Hybrid Framework – It will be a hybrid framework with a combination of the modular and data-driven framework.
+
+Page Object Model – The framework will use the Page Object Model design pattern in Selenium.
+
+Page Factory – It will use page factory implementation of the page object model in Selenium.
+
+Screenshot on failure – The framework will have the capability to capture screenshots in case of failed tests.
+
+Test data in Excel – The framework will have a utility class that will read test data from an excel file.
+
+Reporter - extent Reporter
+
+
+--------------------------------------------------------------------------------------
+
+An automation tester my role in software development by ensuring the quality and efficiency of software products through manual and automated testing. As an automation tester, my responsibilities include designing, developing, and maintaining automated test scripts, maintaining automation frameworks, and integrating automated testing into the continuous integration and deployment pipeline. I collaborate closely with development and QA teams to identify test scenarios, execute automated tests, and analyze results to ensure early defect detection and efficient bug resolution.
+
+ technical skills in automation tools like Selenium and programming languages such as Java. My experience includes implementing BDD and TDD methodologies to improve test coverage . 
+
+

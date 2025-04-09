@@ -1,0 +1,35 @@
+Data Analysis with Python
+    1. Numpy (Numerical python)
+    2. Pandas ((Python data analysis library))
+    3. Matplotlib (Data visualization)
+    4. Seaborn (Data visualization)
+
+1. Numpy is fundamental libraries for scientific computing in python it provide supports for array and matrices,
+along with collection of mathematical function to operate on these data structure.
+    1. install pip install numpy
+    2. import numpy
+    3. create array using numpy --> arr1 = np.array([1,2,3,4,5])
+    Common Numpy function
+        np.array() --> create an array
+        np.zeros(m, n) --> create an array with filled zeros
+        np.one(m, n) --> create an array with filled one
+        np.range(start, stop, step) --> Create an array with range of number
+        np.mean(arr) --> take mean of all the elements in array
+        np.std(arr) --> it will take standard division
+
+2. Pandas (Python data analysis library)
+    Panda is used to data manipulation and analysis. It provide data structured.
+        1. Series (1D labeled array)
+        2. DataFrame (2D table with labeled rows and columns)
+    Key feature
+        1. Handling and manipulation data from Excel, CSV, SQL, JSON,...etc
+        2. Powerful indexing and data filtering
+        3. Grouping, merging, and reshaping data
+        4. Handling missing value
+
+3. Matplotlib (Data visualization library in python)
+    Matplotlib is powerful plotting library for python, that enable and create a static, animated and interactive
+    visualization. it is widely used for visualization in data science and analytics. In this lesson we will
+    cover basic Matplotlib, including creating various type of plot and customizing them.
+
+

@@ -15,7 +15,6 @@ describe('My check boxes test', function() {
 } )
 
 ///*******************************Dropdowns************************************
-
 describe('My dropdowns test', function() {
     it('test with dropdowns', function() {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')

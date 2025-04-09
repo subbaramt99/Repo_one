@@ -5,7 +5,7 @@ for i in range(start, stop):
     print(i)
 
 for char in "python":
-    print(char == "p")
+    print(char)
 
 fruits = ["apple", "bannana", "cherry", "orange"]
 for fruit in fruits:

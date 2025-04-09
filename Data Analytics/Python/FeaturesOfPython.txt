@@ -72,17 +72,36 @@ Data types:
     nested loop --> loop inside loop
 
 5. Data structures in python
-    list --> List is ordered mutable collection of data, and it contains item of different datatypes
+    list --> List is ordered mutable(editable) collection of data, and it contains item of different datatypes
         syntax for list (empty list) --> list =[]
         create simple list and mixed list
         accessing the list using index --> list[1]
         Modifying the list --> list[1] = 100
         list methods --> append, insert, remove, pop, index, count, sort, reverse, clear
         slicing list --> creating sub list --> [3:5], [:5], [::2], [::-1]
-        Iterating the list
+        Iterating the list --> for index,num in enumerate(num) --> it can give index and its value
+        list comprehension --> (Syntax[expression for item in iterable]) --> li = [] for i in range(10): x**2-->  [i**2 for x in range(10)]
+            with conditions --> Syntax[expression for item in iterable condition(if)]
+            nested list --> syntax [[i,j] for i in range(lst1) for j in range(lst2)]
 
-    tuple --> tuple is ordered immutable collection of data
-    set -->
-    dictionaries
+    tuple --> tuple is ordered immutable(Not able edit) collection of data
+    set --> set is unordered mutable collection of unique elements
+    dictionaries --> dic is unordered, mutable collection of key-value pairs --> {"key":"value",}
+6. Deep copy and shallow copy
+    copy an object in python is two types
+        1. shallow copy
+            It create a new objet, but copy only reference of the elements of the original element.
+            Change to the mutable element in copied element will affect the original object.
+        2. Deep copy
+            It create a complete independent copy of the original object, Changes in copied element
+            do not affect the original element.
+7. Lambda function
+    Lambda functions are anonymous function define using lambda keyword. They can have any number of arguments but
+    only one expression. They commonly used for sort operations or as arguments to higher order function
+        Syntax: lambda parameters: Expression --> add = lambda a, b: a+b    add(10, 12)
 
+    Map --> map() is a function applies a function to all items in an input list or array other iterables
+    and return a map object (an iterator). this is particularly used for transforming data in a list comprehensive
+        Syntax: map(expression, iterable) --> numbers = [1,2,3,4,5,6,7,8]   list(map(square, numbers))
+        list(map(lambda x: x*x, numbers))
 

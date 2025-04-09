@@ -9,6 +9,16 @@ public class StringReverse {
 			rev = rev + str.charAt(i);
 		}
 		System.out.println(rev);
+		
+		StringReverse obj = new StringReverse();
+		System.out.print(obj.reverse(str));
+	}
+	
+	public String reverse(String str) {
+		//String rev = "";
+		// Using string builder edit the string and use reverse method
+		String rev1 = new StringBuilder(str).reverse().toString();
+		return rev1;
 	}
 
 }

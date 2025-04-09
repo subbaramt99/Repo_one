@@ -1,0 +1,17 @@
+1. SQL Basics
+2. SQL Advance
+3. SQL Functions
+
+Basics
+1. What is database?
+    Database is an organized collection of data that is stored and access electronically.
+    Think of it digital filling system where information is stored in structured way, Making easy to retrieve,
+    manage and update.
+        1. Structured storage
+            Data is stored in a specific format, often in tables with rows and columns it's making easy to query and analysis
+        2. Consistency
+            Data stored in consistent, meaning that the same type of data is stored in the same way across the database
+        3. Integrity
+            Data integrity ensure that the data is accurate and reliable.
+        4. Scalability
+            Database can grow in size handling data without performance issue
