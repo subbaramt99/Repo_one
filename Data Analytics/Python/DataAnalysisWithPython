@@ -30,6 +30,6 @@ along with collection of mathematical function to operate on these data structur
 3. Matplotlib (Data visualization library in python)
     Matplotlib is powerful plotting library for python, that enable and create a static, animated and interactive
     visualization. it is widely used for visualization in data science and analytics. In this lesson we will
-    cover basic Matplotlib, including creating various type of plot and customizing them.
+    cover basic Matplotlib, including creating various type of plot and customize.
 
 
