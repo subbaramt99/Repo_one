@@ -181,8 +181,18 @@ def Reverse():
         print(Reversed)
     print(Reversed)
 
+def largest_number_in_list():
+    #lst =  input("Enter a list ")
+    lst = [2, 5, 7, 8, 9, 3]
+    maxi = lst[0]
+    for i in lst:
+        if i > maxi:
+            maxi = i
+    print(maxi)
 
-Area_of_circle()
+
+
+#Area_of_circle()
 #Odd_or_Even()
 #Pov_or_Nev()
 #prime()
@@ -194,4 +204,5 @@ Area_of_circle()
 #fibonacci_num()
 #Pattern()
 #Pramyid()
-Reverse()
+#Reverse()
+largest_number_in_list()

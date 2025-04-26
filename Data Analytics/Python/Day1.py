@@ -36,4 +36,5 @@ a = int(input("Please enter Integer: ")) # Taking user inputs "10"
 b = 50
 #print("Type of a:", type(a))
 print("Sum of a + b:", a+b)
+z = str(input("Please enter String: "))
 

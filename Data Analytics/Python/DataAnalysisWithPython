@@ -31,5 +31,13 @@ along with collection of mathematical function to operate on these data structur
     Matplotlib is powerful plotting library for python, that enable and create a static, animated and interactive
     visualization. it is widely used for visualization in data science and analytics. In this lesson we will
     cover basic Matplotlib, including creating various type of plot and customize.
-
+        1. series plot --> plt.plot(x, y, colour="red", linestyle='-', marker='o'
+        2. Bar plot --> plt.bar(categories, value, colour)
+        3. Histogram --> plt.hist(data, bins=5, colour='orange', edgecolor='black')
+        4. Scatter plot --> plt.scatter(x, y, colour='blue', marker='*')
+        5. pie chart --> plt.pie(size, explode=explode, lables=lable, colors=colour, autopct="%1.1f%", shadow=True)
+4. Seaborn (Data visualization library in python)
+    it is work with pandas data frames
+    it has built in themes
+    it use to visualize the complex data
 

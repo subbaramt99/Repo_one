@@ -15,3 +15,41 @@ Basics
             Data integrity ensure that the data is accurate and reliable.
         4. Scalability
             Database can grow in size handling data without performance issue
+Basic Statements
+Day 2:
+    Select,
+    Select distinct,
+    From,
+    Create table,
+    Insert into,
+
+Day 3:
+    Where,
+    And , Or, Not (logical operator)
+    Primary Key,
+    Null operator'
+    Alter, Update, 
+    
+
+Day 4:
+    Between, in
+    Delete --> Delete certain records (Specific rows) from table
+        If we use delete without where, all reecords will delete but table structure remains same intact
+        Use of where clause: yes
+        Roll back(undo): Yes
+        Affect table structure: No
+        performance: Slower then Truncate
+    Truncate --> Delete all the records from table but table structure remains same intact
+        Use of where clause: No
+        Roll back(undo): No
+        Affect table structure: No
+        performance: Faster then Truncate
+    Drop --> Delete all the records from table with structure (wher clause not able to use)
+        Use of where clause: No
+        Roll back(undo): No
+        Affect table structure: Yes
+    Top --> Filter top rows from tables
+    Max, Min --> Filter the maximum and minimum value from table
+    SUM, AVG, COUNT --> Arethmethic Operation
+    Group By --> Shows the heighest Salary in each department
+    

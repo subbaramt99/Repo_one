@@ -1,8 +1,0 @@
-package Day17_ExceptionalHandling;
-
-public class MyException extends Exception {
-	MyException(){
-		super();
-	}
-
-}

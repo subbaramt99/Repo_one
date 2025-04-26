@@ -1,6 +1,6 @@
 import b
 
-a = 11 #--> Declare the variable a and initialize the value of 6
+a = 11 #--> Declare the variable a and initialize the value of 11
 b = 9
 c = 12
 d = 10

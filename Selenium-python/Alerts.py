@@ -25,7 +25,8 @@ input_box.send_keys(Keys.ENTER)
 
 #*************************** Headless mode *************************
 
-option = Options()
+#option = Options()
+option = webdriver.ChromeOptions()
 option.add_argument("--headless") # it will run in headless mode
 
 # download the files
