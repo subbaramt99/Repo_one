@@ -1,0 +1,171 @@
+Locators: (By : AC (abstract class)
+
+   Selenium users locators to find and match the elements of the webpage , 
+   it needs to interact
+
+1,Id,
+2,name,
+3,className
+4,xpath
+5,linktext
+6,partiallinktext
+7,Cssselector
+
+
+<Tagname attributename=attribute value> 
+Id:
+--
+it is the fastest locators.
+
+Browser -> developertools->elements
+
+DOM - Document object model
+
+Rose color ->tag name
+orange -> attribute name
+blue -> attribute values
+
+WebDriver: Interface
+----------
+
+FindElement () - To find only one WebElement
+
+methods:
+-------
+SendKeys() - To enter the textboxes
+
+
+Xpath:
+------
+Validating the locators
+
+  Whenever id,name ,classname is not present in tag , we will take xpath
+
+Types of Xpath:
+--------------
+1,Absolute Xpath  ----  /
+2,Relative Xpath ----- //
+
+Absolute xpath:
+---------
+1,It is complete path from the Root element to the desired element
+
+2,Incase of DOM or UI change because of developers , its is not suitable for finding webelements
+
+e.g:
+
+/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/div[1]/div[1]/input
+
+Relative xpath:
+---------------
+1, it is complete path from the desired element from where we want to take xpath
+
+syntax:
+---------
+//tagName[@attributename='atrributevalue']
+//input[@name='firstname']
+
+Xpath with index :
+------------------
+(//tagName[@attributename='atrributevalue'])[index]
+
+(//a[@role='button'])[2]
+
+Xpath with Following sibling
+-----------------------
+//tagname[@attributename = 'attributevalue']/following-sibiling::tagname
+
+//tagname[text()='input tex']/following-sibiling::tagname[i]
+
+Xpath with preceding- sibling
+--------------------------------------
+//tagname[@attributename = 'attributevalue']/preceding- sibling::tagname
+
+//tagname[text()='input tex']/preceding- sibling::tagname[i]
+
+
+Functions:
+---------
+child - /h1
+parent- //form[@id='TextForm']/parent::div
+ancestor
+following -sibling ->down
+preceding- sibling ->Top
+
+following - sibling :
+---------------------
+//div[@id='fullname_field']//following-sibling::input
+
+preceding - sibling:
+-------------------
+//div[@id='fullname_field']//preceding-sibling::div
+
+parent:
+-------
+//button//parent::div
+
+ancestor:
+---------
+//input//ancestor::div
+
+
+How to print the text from the webpage:
+----------------------------------------
+getText() --  it is method used for printing the text in particular webelement
+
+
+Text():
+------
+1, It only contains values 
+2,it place between two tag lines
+3,blackcolor 
+
+Syntax:
+-------
+
+//tagName[text()='textvalue']
+
+//a[text()='Forgotten password?']
+
+partialtext:
+------------
+Contains:
+-----
+//tagName[contains(text(),'paritial value']
+//a[contains(text(),'Forgotten')]
+
+
+=========================================================
+
+getAttribute();
+---------------
+ It used for taking the corresponding attribute value from the particular webElement
+
+value -> it stores information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

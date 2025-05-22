@@ -52,4 +52,10 @@ Day 4:
     Max, Min --> Filter the maximum and minimum value from table
     SUM, AVG, COUNT --> Arethmethic Operation
     Group By --> Shows the heighest Salary in each department
+
+Day 5 & 6:
+    Joins
+Day 6:
+    like and case Statements
+    
     

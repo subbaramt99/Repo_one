@@ -1,0 +1,41 @@
+launch browser:
+   Two ways we can launch the browser
+
+1,Using set property browser driver :
+System.setProperty("webdriver.edge.driver", "driverpath");
+		WebDriver d=new EdgeDriver();
+		d.get("https://www.facebook.com/");
+		d.manage().window().maximize();
+
+System - Class
+setProperty - method - > To setup drivers
+WebDriver - interface
+
+
+KeyDrivers:
+--------
+
+Chrome - webdriver.chrome.driver
+Edge - webdriver.edge.driver
+firefox -- webdriver.firefox.driver
+-----------------------------------------------------------------------
+
+Using WebDriverMager depencencies:
+-----------------------------------
+
+1, Add dependencies of WebDrivermanager jar in pom.xml
+
+Using WebDriverManager :
+WebDriverManager.chromedriver().setup();    //chrome
+         WebDriverManager.firefoxdriver().setup();       //Firefox
+         WebDriverManager.iedriver().setup();      //IE
+         WebDriverManager.edgedriver().setup();     //Edge
+         WebDriverManager.operadriver().setup();     //Opera
+
+
+methods:
+-------
+get() - to launch the application
+getTitle() - to get the title of the application
+getCurrentUrl() - to get the url of the application
+quit() - to quit the browser

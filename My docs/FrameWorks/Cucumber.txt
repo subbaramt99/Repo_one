@@ -1,0 +1,338 @@
+Cucumber:
+----------
+
+1,Cucumber is a frameworktool , it supports agile methodology, 
+2,It support Behaviour Driven development framework (BDD) .
+3,It explains the behaviour of the applications
+4,In a simple English language text using Gherkin language.
+5, It is easy to understand of non technical persons
+
+Gherkin language:
+-----------------
+
+1,It is format for cucumber specifications
+2,This test acts as documentation and skeleton of the automation tests.
+3, Tab or space used for alignment.
+
+Important terms using gherkin:
+------------------------------
+
+  features,background,Scenario , Scenario Outline , given ,when,then,and Scenario Outline examples
+
+Cucumber configuration:
+----------------------
+
+Dependencies:
+-------------
+
+1, cucumber -java - 7.19
+2, cucumber -junit - 7.19
+3,cucumber - core - 7.19
+4,selenium -java - 4.0.00
+5,junit - 4.12
+
+Steps:
+------
+1, help -> marketplace -> cucumber -> cucumber eclipse plugin 
+
+Create a feature file:
+----------------------
+ src/test/resources -> right click -> other ->type file -> click file -> click next -> filename and give .feature at end
+
+Given :
+      Precondition
+
+When :
+    action
+then :
+    post condition
+
+Feature file - combination of Given , when,then and but
+------------
+
+e.g.
+Scenario : To Open home page
+
+Given user opening browser
+And   user go to login page
+When  user enters the username and password
+And   user clicks the login button
+Then  user see the homepage
+
+parameter:
+----------
+
+When  user enters the username and password "name" "password"
+
+step defenition file :
+@When("I enter the username and password {string} {string}")
+	public void i_enter_the_username_and_password(String s1, String s2) {
+}
+
+Scenario Outline:
+-----------------
+
+It is keyword which can be used to run the same scenario from multiple times with different combination of values
+It should contain an examples tag
+
+@tag1
+  Scenario Outline: User facebook browser lauch
+    Given I launch the browser
+    When I enter the username and password "<username>" "<password>"
+    Then I click loginbutton
+    Then I exit the page
+    
+    Examples:
+    |username | password|
+    |visal    | abc1234 |
+----------------------------------------------------------------
+Test Runner:
+-----------
+ 1,link between feature path and step definition path
+ 2,we are going to give feature filepath
+ 3,we are going to give step definition path
+4,Its automatically refer and execute
+
+Annotations:
+------------
+@Runwith - for run the cucumber test
+@cucumberoptions -> feature and stepfile path mention, plugin 
+
+Step 1:
+ 1, create a empty class test runner in same package
+ 2,add 2 annotations runwith,cucumberoptions
+
+cucumber options features="filepath" glue ={"step definition path"} 
+
+dryRun = true -> just get the missing snippets 
+
+plugins -> reporter -> pretty,html report,json,xml
+
+monochrome - > test representation
+pretty - better representation
+
+---------------------------------------------------------
+
+Cucumber DataTable:
+--------------------
+    pass the testdata 
+  two ways,
+1,datatable without header
+2,datatable with header
+
+List -> without header
+Map -> with header
+
+List -> One dimensional list (asList)  -   |arun|kumar|arunkumar@gmail.com|test|1234556|  -> single row
+
+        Two dimensional list (asLists) -  |arun|kumar|arunkumar@gmail.com|test|1234556|    -> n number of rows
+                                          |venkat|krishna|venkat@gmail.com|test2|123432|
+
+
+Map -> one dimensional map (asmap)  -  one key    -> |firstname|arun|
+                                       one value     |lastname|kumar|
+
+       two dimensional map (asmaps) - one key         -> |firstname|lastname|
+                                      multiple values    |arun | kumar|
+                                                         |vimal | raj|
+
+
+Syntax:
+-------
+List
+----
+one dimensional:
+-----------------
+
+List<String> custlist dataTable.asList(String.class);
+
+Two dimensional:
+----------------
+List<List<String>> custlist = dataTable.asLists(String.class);
+
+                    e.g  sendKeys(custlist.get(0).get(0));
+                         sendKeys(custlist.get(0).get(1));
+
+
+Map:
+----
+
+one dimensional map:
+--------------------
+|key1|value 1|          ->   |firstname| raj|
+|key-2| value 2|             |lastname|kumar|
+
+Map<String,String> custlist = dataTable.asMap(String.class,String.class);
+
+Two dimensional Map:
+-----------------------
+|key1|key2|             |firstname|lastname|
+|value1|value2|  ->     |raj |kumar|
+                        |muthu|krishnan|
+
+List<Map<String,String>> custlist=dataTable.asMaps(String.class ,String.class);
+ 
+
+            (custlist.get(1).get("firstname");
+            (custlist.get(1).get("lastname");
+-------------------------------------------------------------------------
+
+Background:
+----------
+List of steps run before each of the scenarios
+keyword in Cucumber, which is used in BDD (Behavior-Driven Development) scenarios to streamline repetitive steps.
+
+1,open browser
+2,some initial data checkup
+e.g
+
+Feature: User login
+  As a registered user
+  I want to log in fb
+  So that I can access my profile
+
+  Background:
+    Given I am on the login page
+    And the database contains user "username" with password "password"
+
+  Scenario: Valid login
+    When I enter username "user123" and password "pass456"
+    And I click the login button
+    Then I should be logged into my account
+
+  Scenario: Invalid login
+    When I enter username "invaliduser" and password "invalidpass"
+    And I click the login button
+    Then I should see an error message
+
+==========================================================================
+
+
+Hooks:
+------
+=> Cucumber are a powerful way to manage the test execution lifecycle, 
+=> providing a way to automate repetitive setup and cleanup tasks, making tests more readable and maintainable
+
+=> hooks are blocks of code that run at specific points during the test execution lifecycle. 
+=> They allow you to set up and tear down conditions before and after scenarios or steps. 
+=> Hooks are similar to the concept of setup and teardown in traditional test frameworks like JUnit or TestNG
+
+1. @Before :
+This runs before each scenario.
+It's used for setting up the environment or preconditions (e.g., opening a browser, initializing data, setting up a database connection).
+
+2. @After  :
+This runs after each scenario.
+It's used for cleanup tasks (e.g., closing the browser, clearing cookies, resetting data).
+
+Additional Hooks:
+@BeforeStep and @AfterStep:
+
+Conditional Hooks:
+
+we can run hooks conditionally based on tags. 
+For example, only run certain hooks for scenarios tagged with @start:
+
+@Before("@start")
+public void setUpForLogin() {
+    // Code to run before scenarios tagged with @Login
+}
+
+==================================================================================
+Cucumber flow:
+-------------
+once created maven class ->add dependencies -> after creating feature and create snippets
+
+1, pom.xml start execution
+2,Testrunner -> featuresfiles ->tags->glue-> hookclass
+3,featurefile scenarios -> corresponding step definition
+-> reports
+
+framework flow:
+---------------
+
+folder structure:
+----------------
+
+====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+WebDriver - Interface
+navigate() - method
+
+Navigation commands:
+--------------------
+Navigation - I
+to()
+back()
+forward()
+refresh()
+
+Note:
+----
+
+driver.get():
+-------------
+
+It is used to go to the particular website but it doesn't maintain the browser history and cookies
+so we cant use forward and backward button.
+
+driver.navigate().to() :
+-----------------------
+
+Its is used to go to the particular website but it maintains the browser history and cookies
+so we can use forward , backward and refresh to navigate between the pages during coding testcase
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+windows handling:
+-----------------
+
+Window handling in selenium refers to managing multiple browser windows or tabs during test execution
+Selenium provides methods to switch between different windows using unique window handles.
+
+driver.switchTo().window(String url); //not working
+driver.switchTo().window(String title);//not working due to same url
+driver.switchTo().window(String windowsId); 
+
+
+window id:
+-------
+
+parent window id:
+-----------------
+  getWindowHandle() - method
+
+all windows id:
+---------------
+  getWindowHandles() - method
+
+
+//return parent window
+driver.switchto().defaultContent();
+
+
+

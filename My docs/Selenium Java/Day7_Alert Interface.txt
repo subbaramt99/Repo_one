@@ -1,0 +1,33 @@
+Alert: Interface
+
+driver.switchTo.alert();
+
+
+Types:
+1,Simple alert  
+2,confirm alert
+3,prompt alert
+
+Rule:
+
+1, we cant find the locator
+2, when we find the location , its called Webelement page
+3,driver.switchTo.alert();
+
+Simple Alert:
+1, accept();  -> single btn
+
+Confirm alert:
+--------------
+1,accept()
+2,dismiss();
+
+
+
+prompt alert:
+-------------
+1,accept();
+2,dismiss();
+3,sendkeys();
+
+

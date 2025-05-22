@@ -1,0 +1,88 @@
+Waits:
+
+Static wait:
+-------------
+ -> Thread.sleep(5000);
+1,It has to wait for maximum time
+2,It is fixed wait
+3,It will make the application performance low
+4,we can pass only milliseconds.	
+
+--------------------------------------------
+Wait in Selenium:
+----------------
+  In selenium used to handle synchronization issues between the automation script  and web application ,
+  It ensures that elements are available before performing actions.
+  It prevent NoSuchElement Exception or StaleElementRference excpetion
+
+Types of Waits:
+--------------
+1, Implicit wait
+2,Explicit wait
+   1,WebDriver wait
+   2,fluent wait
+
+Implicit wait:
+--------------
+ It will wait until the exception happen.
+1, It is applicable for all the locators
+2,It doesn't wait for maximum time , if the locator is find
+3, we can pass the time unit as sec, millisec,hours,days
+
+Syntax:
+------
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+Explicit wait:
+--------------
+1,WebDriver Wait:
+-----------------
+   It will wait for specific condition
+1, It is applicable for specific locators.
+2,doesnt wait for maximum hours if the locators found within a time period
+3,we can pass the time unit as sec, millis
+
+WebDriverWait - Class
+ExpectedConditions - Class
+
+	WebDriverWait w=new WebDriverWait(driver,Duration.ofSeconds(10));
+	WebElement passtext=driver.findElement(By.xpath("//input[@id='pass']"));
+	//element visiblity
+	//textbox
+	w.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//input[@id='email']")));
+	
+	//buttons or checkbox
+	w.until(ExpectedConditions.elementToBeClickable(passtext));
+	//alerts
+	w.until(ExpectedConditions.alertIsPresent());
+	//frames
+	w.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.tagName("iframe")));
+
+Fluentwait:
+----------
+
+1,It is also applicable for very specific locator , 
+2,doesnt wait for maximum hours if the locators found within a time period
+3,we can pass the time unit as sec, millis
+4, we can set the time interval (pooling time)
+5,we can ignore the exception too.
+
+Wait -interface
+FluentWait - Class
+
+	
+Wait<WebDriver> w=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(100)).pollingEvery(Duration.ofMillis(5000)).ignoring(Throwable.class);
+	w.until(ExpectedConditions.elementToBeClickable(passtext));
+	
+	
+
+
+
+
+
+
+
+
+
+

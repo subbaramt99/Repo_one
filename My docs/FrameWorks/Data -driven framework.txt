@@ -1,0 +1,108 @@
+Data -driven framework :
+----------------------
+-> Using Data -driven framework we can read the values from the excel ,
+-> We can read the values from the excel
+-> we can write the values to the excel 
+-> we can update the values.
+
+
+jar/dependencies:
+-----------------
+5.2 beta poi-ooxml
+
+
+Excel Integration:
+------------------
+formats:
+--------
+xls --JXI -----> HSSFWorkbook -- 2^4 rows - 2^8 cells
+xlsx -- POI ---XLS -> XSSFWorkbook -> 2^20 rows -2^16 cells
+
+Excel steps:
+------------
+File -- Object creation  (for location)
+    
+       -> File - Class
+Reading input from excel -- FileInputStream - Class
+
+WorkBook--Interface
+
+    WorkBook w =new XSSFWorkBook();
+
+Sheet -> I  -> getSheet();
+Row  -> I   ->getRow();
+Cell -> I   -> getCell();
+
+=======================================================
+
+
+
+
+
+
+
+
+
+
+getPhysicalNumberOfRows() - To get the available rows
+getPhysicalNumberOfCells() - To get the available cells
+
+Types of Cells:
+---------------
+
+Cell: Interface
+----
+getStringCellValue()  -- for string --type - 1
+getNumericCellvalue() -- for numeric cell --  type - 0
+getDateCellValue() -- for date cell   -- type - 0
+
+getCellType() -- To find the types of the cell
+
+
+To find the cell type:
+------------------------
+
+int type = c.getCellType();
+System.out.println(type);
+
+dd-mmm-yy
+----------
+
+SimpleDateFormat : Class
+format - to convert date to string
+
+String - class
+valueof()- To convert string
+
+Write excel:
+----------
+
+Cell: Interface
+setCellValue() - to write the values in cell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

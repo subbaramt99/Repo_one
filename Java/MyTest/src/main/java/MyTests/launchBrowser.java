@@ -7,15 +7,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class launchBrowser {
 	public static void main(String[] args) {
+		
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
+		
 		options.addArguments("--disable-web-security");
 		WebDriver driver = new ChromeDriver(options);
 		
 		//WebDriverManager.chromedriver().setup();
 		//WebDriver driver = new ChromeDriver();
 		
-		driver.get("https//:www.bt.bussiness.com");
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 	}
 
 }

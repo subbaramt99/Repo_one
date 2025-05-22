@@ -1,0 +1,94 @@
+POM:
+pom.xml -   project - where we store  dependencies
+
+page object model : pom
+-----------------
+
+    design pattern that helps to improve test cases maintenance and reduce code duplication
+    Maintain locators in real time projects
+
+types:
+---
+1,with page factory
+2,without page factory
+
+with page factory:
+------------------
+
+@findBy
+@FindBys
+@FindAll
+@cacheLookUp
+
+
+Drawbacks of existing methodologies:
+-----------------------------------
+
+1, it reduce the rework -  we dont need to change all the locators
+2,we can avoid the StaleElementReferenceException
+3, performance issues
+
+Pagefactory: Class
+-------------------
+
+ initElements() - methods
+
+@FindBys({
+ @findBy(id="email")
+ @findBy(name="info")
+})
+
+private List<WebElement> elementswithBothclass1ANDClass2
+
+WebElement which satisfies both criteria
+
+-----------------------------------------
+
+@FindAll({
+  @FindBy(id="email")
+ @FindBy(id="mail")
+})
+
+private List<WebElement> elementsWithEither_class1_Or_class2
+
+all those webelement that satisfies any one of the criteria
+
+-----------------------------------------------------------
+@cacheLookUp  - cache memory storage
+
+whenever take a time to find location
+
+-----------------------------------------------------------
+StaleElementReference Exception:
+----------------------------------
+
+    This exception says that a web element in no longer present in the web page 
+1,Navigation another pages
+2,DOM(Document Object model) has refresh
+3,Frame or window switch
+
+No such Element exception:
+--------------------------
+  This exception is due to accessing element which is not available on the page
+  1, WebElement is not present
+  2,Due to Wait problem
+  3,Not switched into frame
+  4,Not switched into window
+  5,not maximize window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

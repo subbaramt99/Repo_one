@@ -1,7 +1,7 @@
 Hi, I am subbaram. I have 3+ years of experience in software testing, covering both manual and automation testing. 
 
-My technical expertise includes working with Java and Selenium for automation,
-along with building and maintaining frameworks using CATS, Cucumber BDD, and test-driven framework approaches.
+My technical expertise includes working with Java and Selenium for automation, 
+along with building and maintaining frameworks using TestNG, Cucumber BDD, Maven, and data-driven framework approaches.
 
 I also have strong experience in API testing using tools like Postman for manual and request modules for automation.
 

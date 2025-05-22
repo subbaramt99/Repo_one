@@ -1,0 +1,11 @@
+Screenshot:
+-----------
+TakesScreenshot : Interface
+
+   getScreenshotAs() - method
+
+FileUtils: Class
+  
+   CopyFile()-method
+
+commons-io-jar 2.16.1

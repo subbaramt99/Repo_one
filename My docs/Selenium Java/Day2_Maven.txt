@@ -1,0 +1,43 @@
+Maven :
+-------
+
+Project management tool or build management tool/ dependency management tool
+1, managing dependencies 
+2, packaging application
+3,store the reporter and testdata
+
+Maven is addresses for two aspects:
+  1, it describes how software is build
+  2,It describes the software dependencies
+
+  maven provides a structured way to manage a projects lifecycle , dependencies and plugins and create reports.
+
+Maven Structure:
+---------------
+src/main/java
+src/main/resources
+src/test/java
+src/test/resources
+JRE system library
+Maven depencies
+src
+target
+pom.xml
+
+
+Features of maven:
+-----------------
+1, pom.xml - > the file contains project configuration like dependencies,plugins
+2,dependency Management
+3,Build automation:  -> complie ,test,package,install
+4,plugins -> running test reports ,deploying servers
+5,lifecycle process: -> Clean ,run, test  (Maven goals)
+
+pom.xml:  (Project Object Model)
+--------
+  pom.xml , where we will give our jar dependencies.
+
+
+
+
+

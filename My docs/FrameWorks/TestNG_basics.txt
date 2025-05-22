@@ -1,0 +1,313 @@
+TestNG: 
+-------
+
+    It is framework tool , which provides,
+1, It provides default html report
+2,Easy to set the priority
+3,Easy to pass the parameters from TestNG.xml file 
+4,Automatically rerun the failure test cases
+5,cross browser testing is possible
+6,parallel execute is possible
+7,Data provider is possible
+
+Annotations:
+----------
+@Test
+@BeforeSuite
+@AfterSuite
+@BeforeClass
+@AfterClass
+@Beforemethod
+@AfterMethod
+@beforetest
+@aftertest
+@beforegroup
+@aftergroup
+
+Steps:
+-----
+1, TestNG jar file download - build to path
+2,TestNG dependencies - add - build
+
+Priority :
+--------
+  TestNG print on the ascending order by default
+
+@Test (priority = 1)
+public void test(){
+}
+================
+how to skip particular testcases:
+@Test (enabled = false)
+===================
+Invocation count:
+  if we want run testcases multiple times , we can use invocation count keyword
+@Test (invocationCount = 2)
+===================
+
+Parameters:
+----------
+  if we want to pass the parameters , we can use parameter one tag in testing.xml file 
+so we can pass more than one parameters
+
+create testing.xml file 
+add parameters in xml file
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	  <parameter name="username" value="testngusername"></parameter>
+	  <parameter name="password" value="1234456778"></parameter>
+    <classes>
+      <class name="org.testngeg.ClassParameters"/>
+    </classes>
+-------------------------------------------------------------------
+
+@Parameters({"username","password"})
+	@Test
+	public void test1(String s1,String s2) {
+}
+
+@optional :
+------------
+
+   when the passed parameters is mismatched in class , we can use @optional one annotation . if parameters are mismatched 
+
+@Parameters({"username","password"})
+	@Test
+	public void test1(@Optional("visal")String s1,String s2) {
+}
+
+
+Assert:
+-------
+
+Types of Assert:
+----------------
+HardAssert (Assert) - (Junit assert)
+SoftAssert (Verify)
+
+HardAssert:
+-----------
+    If Assert condition fails . that test cases will stopped or failed.
+but after upcoming testcases are verify order wise
+
+assertTrue -- Boolean condition -- (driver.getCurrentURL().equals("url")
+assertEquals -- Expected vs actual -- ("url", driver.getCurrentURL());
+
+
+SoftAssert:
+-----------
+
+ When the particular assert get fails , it will excute the remaining lines of codes & asserts are execute.
+normally, and the marked testcases pass , and execute remaining testcases normally.
+
+assertTrue --- Boolean condition
+assertEquals --Expected vs actual
+
+assertAll() - m --> 
+
+   It is going to capture all the assert from the particular test cases , and it comparing all the test cases , if any one assert is fail,
+it is going to highlight the particular assert and then it will marked the test cases fail
+
+--------------------------------------------------------------------------------------------
+
+Suite level Executor:
+--------------------
+
+ If we want to execute more than one class , we can go for suite level execution with help of testing.xml
+step:
+-----
+1,Create testing.xml file
+2, Select all classes which we want to run
+3,then click convert to Testng.
+
+--------------------------------------------------------------------------------
+
+-------------------------------------------------
+
+Groupings:
+----------
+  If you want run 100 testcases.
+ We can segregate the testcases using group concepts.
+
+e.g 100 testcases for Regression , 100 testcases for sanity
+
+How to execute multiple testcases:
+  <groups> <run>
+		include name="smoke"></include> 	  
+		  </run>	  
+	  </groups>
+
+how to skip bulk testcases:
+<exclude name="Regression"></exclude> 
+
+
+---------------------------------------------------------
+
+
+Data provider:
+-------------------
+  To pass the bulk testdata
+
+ e.g. login functionality we can validated using data provider
+
+int [][] a= new int [5][5] ---> two dimensional array
+int a[] = {12.12,3,4,5,6}  ----> one dimensional array
+int a[][] = {{12,23},{23,35}}  ----> two dimensional array
+
+@DataProvider (name="res")
+	private Object[][] data(){
+		return new Object[][] {{"chennai","1234"},{"vellore","3241"},{"madurai","23456"}};
+	}
+
+==========================================================
+
+Parallel Execution:
+-------------------
+Three ways we can do parallel execution
+
+1,methods 2,classes 3,Tests
+
+Default thread count = 5 
+
+purpose:
+---------
+ To check the compatibility as well as stability of the application.
+
+method level:
+-------------
+
+<suite name="Suite" parallel="methods" >
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="org.testngeg.Sample2"/>
+    </classes>
+
+Class level:
+------------
+<suite name="Suite" parallel="classes">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="org.testngeg.Sample3"/>
+      <class name="org.testngeg.Sample2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+
+Test level:
+----------
+<suite name="Suite" parallel="tests">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="org.testngeg.Sample3"/>
+      <class name="org.testngeg.Sample2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

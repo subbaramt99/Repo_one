@@ -1,0 +1,24 @@
+JAVAScriptExecutor:  - Interface (I)
+---------------------
+        - executeScript()-method
+     JavaScriptExecutor is a interface that helps to execute javascript through selenium webdriver.
+     It provides two methods "executeSCript" "executeAsynscript" to run javascript on the selected page.
+
+Scroll down/up:
+---------------
+
+arguments[0].scrollIntoView(true)- down
+arguments[0].scrollIntoView(false)- up
+
+Click:
+-----
+arguments[0].click();
+
+Insert
+------
+arguments[0].setAttribute('value','data)
+
+getAttribute:
+-----------
+return arguments[0].getAttribute('value')
+

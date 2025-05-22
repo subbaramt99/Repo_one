@@ -1,0 +1,33 @@
+Dropdown:
+--------
+
+Select - Class
+
+methods:
+--------
+1,selectByValue()
+2,SelectByVisbileText()
+3,selectByIndex()
+4,getOptions()
+5,getAllSleectedOptions();
+6,getFirstSelectedOption()
+7,isMultiple()
+8,deSelectByIndex()
+9,deSelectByValue()
+10,deSelectByVisibleText()
+11,deSelectAll()
+
+Drop down HTML code:
+--------------------
+
+<Select>
+<option value="1">one</option>
+<option value="2">Two</option>
+</Select>
+
+Select: C
+----------
+SelectByIndex(1);
+SelectByValue("1");
+SelctByVisibleText("One");
+

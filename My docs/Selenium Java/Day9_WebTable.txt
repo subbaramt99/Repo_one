@@ -1,0 +1,26 @@
+WebTable:
+--------
+<table>
+<tr>
+<th> id </th>
+<th> name </th>
+
+</tr>
+<tr>
+<td> 10</td>
+<td> navin</td>
+</tr>
+</table>
+
+tr - table row
+td - table data
+th - table heading 
+
+
+
+1,print all the values in the webtable
+2,print the last row
+3,to print last 2 rows
+4, to print all the values without tr ,td
+
+------------------------------------------------------

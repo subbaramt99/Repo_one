@@ -1,0 +1,53 @@
+JUNIT:
+-----
+
+1, download JUNIT jar / dependencies
+
+Annotations:
+-----------
+@Runwith
+@suite.suiteclasses
+@Ignore
+------------------------
+flow:
+-----
+@Beforeclass
+@Before
+@Test
+@After
+@AfterClass
+
+-----------------------
+
+Validation:
+-----------
+Assert: class - Hard assert
+-------
+
+assertEquals();
+assertTrue();
+
+Verification or validation are used in assert.
+green - pass
+blue - failed
+Red - error
+
+-----------------------------
+Result : C
+------
+getFailureCount() 
+getRunCount()
+getRunTime()
+getIgnoreCount()
+wasSuccessful()
+getFailures()
+
+Failure : C
+-------
+getMessage()
+
+Junitcore : C
+---------
+ runClasses()
+
+
