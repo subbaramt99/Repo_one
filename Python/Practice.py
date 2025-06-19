@@ -190,6 +190,25 @@ def largest_number_in_list():
             maxi = i
     print(maxi)
 
+def find_the_duplicate_occurence_of_string ():
+    print("find the duplicate occurence of the string")
+    input = "my name is subbaram"
+    char_count = {}
+
+    for ch in input:
+        if ch not in char_count:
+            char_count[ch] = 1
+        else:
+            char_count[ch] = char_count[ch] + 1
+
+    print(char_count)
+
+    print("First non repeating character")
+    for char in input:
+        if char_count[char] == 1:
+            print(char)
+            break
+
 
 
 #Area_of_circle()
